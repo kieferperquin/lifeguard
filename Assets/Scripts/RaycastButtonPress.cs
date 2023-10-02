@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.XR;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class RaycastButtonPress : MonoBehaviour
@@ -11,9 +12,13 @@ public class RaycastButtonPress : MonoBehaviour
     private XRRayInteractor LeftRayInteractor, RightRayInteractor;
     private XRController LeftXRController, RightXRController;
 
+    private GameObject button;
+
+    public InputHelpers.Button triggerbutton;
+
     [SerializeField] private Text debug;
     void Start()
-    {
+    { // setting all the components i need
         LeftRayInteractor = LeftController.GetComponent<XRRayInteractor>();
         LeftXRController = LeftController.GetComponent<XRController>();
 
@@ -22,23 +27,41 @@ public class RaycastButtonPress : MonoBehaviour
     }
 
     void Update()
-    {
-        ControllerRay(RightRayInteractor, LeftXRController);
-        ControllerRay(LeftRayInteractor, RightXRController);
+    { // checking if i do something with an controller
+        ControllerRay(RightRayInteractor, RightXRController); // Right
+        ControllerRay(LeftRayInteractor, LeftXRController); // Left
     }
 
     private void ControllerRay(XRRayInteractor RayInteractor, XRController XRcontroller)
     {
+        /* what am i checking / want it to check
+            
+            
+        */
         RaycastHit res;
         if (RayInteractor.TryGetCurrent3DRaycastHit(out res))
         {
-            Vector3 groundPt = res.point; // the coordinate that the ray hits
+            //Vector3 groundPt = res.point; // the coordinate that the ray hits
             
             if (res.collider.CompareTag("UI-Interactable"))
             {
-                if (true)
-                {
+                bool trigger = false;
 
+                debug.text = "no work";
+
+                XRcontroller.inputDevice.IsPressed(triggerbutton, out trigger); // set the button to press
+
+                debug.text = "set button";
+
+                if (trigger) //if trigger is pressed (true), activate onclick
+                {
+                    debug.text = "trigger do be triggering";
+
+                    button = res.collider.transform.gameObject;
+
+                    button.GetComponent<Button>().onClick.Invoke();
+
+                    debug.text = "onClick";
                 }
             }
             else
@@ -48,7 +71,8 @@ public class RaycastButtonPress : MonoBehaviour
         }
         else
         {
-            
+            debug.text = "";
+
         }
     }
 }
