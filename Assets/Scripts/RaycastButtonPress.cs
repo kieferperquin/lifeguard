@@ -14,7 +14,8 @@ public class RaycastButtonPress : MonoBehaviour
 
     private GameObject button;
 
-    public InputHelpers.Button triggerbutton;
+    public string buttonTrigger;
+    public float sens;
 
     [SerializeField] private Text debug;
     void Start()
@@ -46,22 +47,18 @@ public class RaycastButtonPress : MonoBehaviour
             if (res.collider.CompareTag("UI-Interactable"))
             {
                 bool trigger = false;
+                float buttonPressed = Input.GetAxis(buttonTrigger);
 
-                debug.text = "no work";
-
-                XRcontroller.inputDevice.IsPressed(triggerbutton, out trigger); // set the button to press
-
-                debug.text = "set button";
+                if (buttonPressed >= sens)
+                {
+                    trigger = true;
+                }
 
                 if (trigger) //if trigger is pressed (true), activate onclick
                 {
-                    debug.text = "trigger do be triggering";
-
                     button = res.collider.transform.gameObject;
 
                     button.GetComponent<Button>().onClick.Invoke();
-
-                    debug.text = "onClick";
                 }
             }
             else

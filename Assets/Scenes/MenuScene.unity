@@ -1899,7 +1899,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LeftController: {fileID: 560173113}
   RightController: {fileID: 1351346252}
-  triggerbutton: 2
+  buttonTrigger: XRI_Right_Trigger
+  sens: 0.5
   debug: {fileID: 286966181}
 --- !u!1 &875537766
 GameObject:
