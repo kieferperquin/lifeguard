@@ -7,49 +7,47 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class RaycastButtonPress : MonoBehaviour
 {
-    [SerializeField] private GameObject LeftController, RightController;
+    public triggers buttons = new triggers();
 
-    private XRRayInteractor LeftRayInteractor, RightRayInteractor;
-    private XRController LeftXRController, RightXRController;
+    public enum triggers //alle verschillende knoppen wat je kan duwen
+    {
+        None,
+        XRI_Left_Trigger,
+        XRI_Right_Trigger
+    }
+
+    [SerializeField] private GameObject controller;
+
+    private XRRayInteractor RayInteractor;
 
     private GameObject button;
 
-    public string buttonTrigger;
+    string buttonTrigger;
     public float sens;
 
     [SerializeField] private Text debug;
     void Start()
-    { // setting all the components i need
-        LeftRayInteractor = LeftController.GetComponent<XRRayInteractor>();
-        LeftXRController = LeftController.GetComponent<XRController>();
-
-        RightRayInteractor = RightController.GetComponent<XRRayInteractor>();
-        RightXRController = RightController.GetComponent<XRController>();
+    {
+        RayInteractor = controller.GetComponent<XRRayInteractor>();
     }
 
     void Update()
-    { // checking if i do something with an controller
-        ControllerRay(RightRayInteractor, RightXRController); // Right
-        ControllerRay(LeftRayInteractor, LeftXRController); // Left
+    {
+        ControllerRay();
     }
 
-    private void ControllerRay(XRRayInteractor RayInteractor, XRController XRcontroller)
+    void ControllerRay()
     {
-        /* what am i checking / want it to check
-            
-            
-        */
+        buttonTrigger = buttons.ToString();
         RaycastHit res;
         if (RayInteractor.TryGetCurrent3DRaycastHit(out res))
         {
-            //Vector3 groundPt = res.point; // the coordinate that the ray hits
-            
             if (res.collider.CompareTag("UI-Interactable"))
             {
                 bool trigger = false;
                 float buttonPressed = Input.GetAxis(buttonTrigger);
 
-                if (buttonPressed >= sens)
+                if (buttonPressed >= sens) //if buttonPressed is bigger or equal to sens then trigger is true
                 {
                     trigger = true;
                 }
@@ -60,10 +58,6 @@ public class RaycastButtonPress : MonoBehaviour
 
                     button.GetComponent<Button>().onClick.Invoke();
                 }
-            }
-            else
-            {
-                
             }
         }
         else
