@@ -19,13 +19,11 @@ public class RaycastButtonPress : MonoBehaviour
     [SerializeField] private GameObject controller;
 
     private XRRayInteractor RayInteractor;
-
     private GameObject button;
+    private string buttonTrigger;
 
-    string buttonTrigger;
     public float sens;
 
-    [SerializeField] private Text debug;
     void Start()
     {
         RayInteractor = controller.GetComponent<XRRayInteractor>();
@@ -59,11 +57,6 @@ public class RaycastButtonPress : MonoBehaviour
                     button.GetComponent<Button>().onClick.Invoke();
                 }
             }
-        }
-        else
-        {
-            debug.text = "";
-
         }
     }
 }
