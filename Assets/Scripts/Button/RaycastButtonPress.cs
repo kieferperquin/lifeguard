@@ -7,14 +7,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class RaycastButtonPress : MonoBehaviour
 {
-    public triggers buttons = new triggers();
-
-    public enum triggers //alle verschillende knoppen wat je kan duwen
-    {
-        None,
-        XRI_Left_Trigger,
-        XRI_Right_Trigger
-    }
+    public TriggersListObject.Triggers buttons;
 
     [SerializeField] private GameObject controller;
 
@@ -23,6 +16,8 @@ public class RaycastButtonPress : MonoBehaviour
     private string buttonTrigger;
 
     public float sens;
+
+    private bool pressedOnce = true;
 
     void Start()
     {
@@ -42,18 +37,18 @@ public class RaycastButtonPress : MonoBehaviour
         {
             if (res.collider.CompareTag("UI-Interactable"))
             {
-                bool trigger = false;
-                float buttonPressed = Input.GetAxis(buttonTrigger);
+                bool trigger = Input.GetAxis(buttonTrigger) >= sens;
 
-                if (buttonPressed >= sens) //if buttonPressed is bigger or equal to sens then trigger is true
+                if (!trigger)
                 {
-                    trigger = true;
+                    pressedOnce = true;
                 }
 
-                if (trigger) //if trigger is pressed (true), activate onclick
+                if (trigger && pressedOnce) //if trigger is pressed (true), activate onclick
                 {
-                    button = res.collider.transform.gameObject;
+                    pressedOnce = false;
 
+                    button = res.collider.transform.gameObject;
                     button.GetComponent<Button>().onClick.Invoke();
                 }
             }
