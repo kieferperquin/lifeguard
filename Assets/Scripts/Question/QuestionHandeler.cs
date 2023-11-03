@@ -6,14 +6,12 @@ using UnityEngine.UI;
 
 public class QuestionHandeler : MonoBehaviour
 {
-    #region tiggers/needs for input
+    #region triggers/needs for input
     public TriggersListObject.Triggers answerButtonLeft;
     private string leftButton;
     
     public TriggersListObject.Triggers answerButtonRight;
     private string rightButton;
-
-    private float sens = .5f;
     #endregion
 
     #region question variables
@@ -55,8 +53,8 @@ public class QuestionHandeler : MonoBehaviour
 
     void CheckButtonPress()
     {
-        bool triggerLeft = Input.GetAxis(leftButton) >= sens;
-        bool triggerRight = Input.GetAxis(rightButton) >= sens;
+        bool triggerLeft = Input.GetButton(leftButton);
+        bool triggerRight = Input.GetButton(rightButton);
 
         if ((triggerLeft || triggerRight) && isActivadedOnce)
         {
@@ -98,10 +96,19 @@ public class QuestionHandeler : MonoBehaviour
             foreachInt++;
             answersArray[foreachInt] = currentQuestionData.wrongAnswers[foreachInt - 1];
         }
-
+        debug.text = "hello";
         debug.text = string.Join("", answersArray);
 
 
+
+        SetAnswers(answersArray);
+
+        displayActivated = false;
+        currentData++;
+    }
+
+    void SetAnswers(string[] answersArray)
+    {
         //need to put a randomizer here
         answerText1.text = answersArray[1];
         answerObject1.tag = "correct";
@@ -111,8 +118,5 @@ public class QuestionHandeler : MonoBehaviour
         answerObject1.tag = "wrong";
         answerText4.text = answersArray[4];
         answerObject1.tag = "wrong";
-
-        displayActivated = false;
-        currentData++;
     }
 }
