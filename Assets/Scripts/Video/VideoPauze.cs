@@ -9,34 +9,49 @@ public class VideoPauze : MonoBehaviour
     public TriggersListObject.Triggers buttonLeft;
     public TriggersListObject.Triggers buttonRight;
 
-    [SerializeField] private GameObject videoPlayerObject;
+    [SerializeField] private VideoPlayer videoPlayer;
 
-    private VideoPlayer videoPlayer;
-
-    private bool isPauzedLeft = false;
-    private bool isPauzedRight = false;
+    private bool isPaused;
 
     string buttonTrigger;
 
     private void Start()
     {
-        videoPlayer = videoPlayerObject.GetComponent<VideoPlayer>();
+        buttonTrigger = buttonLeft.ToString();
+        buttonTrigger = buttonRight.ToString();
     }
     private void Update()
     {
-        buttonTrigger = buttonLeft.ToString();
-        isPauzedLeft = Input.GetButton(buttonTrigger);
+        buttonPressed();
 
-        buttonTrigger = buttonRight.ToString();
-        isPauzedRight = Input.GetButton(buttonTrigger);
-
-        if (isPauzedLeft || isPauzedRight) //both are true
+        if (isPaused)//true
         {
             videoPlayer.Pause();
         }
         else
         {
             videoPlayer.Play();
+        }
+    }
+
+    void buttonPressed()
+    {
+        bool trigger = Input.GetButton(buttonTrigger);
+        if (!trigger)//false
+        {
+            trigger = Input.GetButton(buttonTrigger);
+            if (!trigger)//false
+            {
+                isPaused = false;
+            }
+            else
+            {
+                isPaused = true;
+            }
+        }
+        else
+        {
+            isPaused = true;
         }
     }
 }
