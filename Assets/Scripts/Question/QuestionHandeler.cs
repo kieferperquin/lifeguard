@@ -35,11 +35,11 @@ public class QuestionHandeler : MonoBehaviour
     {
         leftButton = answerButtonLeft.ToString();
         rightButton = answerButtonRight.ToString();
-
-        answerText1 = answerObject1.GetComponent<Text>();
-        answerText2 = answerObject2.GetComponent<Text>();
-        answerText3 = answerObject3.GetComponent<Text>();
-        answerText4 = answerObject4.GetComponent<Text>();
+        
+        answerText1 = answerObject1.GetComponentInChildren<Text>();
+        answerText2 = answerObject2.GetComponentInChildren<Text>();
+        answerText3 = answerObject3.GetComponentInChildren<Text>();
+        answerText4 = answerObject4.GetComponentInChildren<Text>();
 
         SetQuestion();
     }
