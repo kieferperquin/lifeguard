@@ -29,7 +29,7 @@ public class QuestionHandeler : MonoBehaviour
     [SerializeField] private GameObject questionDisplayBoard;
 
     private bool displayActivated = false;
-    private bool isActivadedOnce = false;
+    private bool isActivadedOnce = true;
     #endregion
 
     [SerializeField] private Text debug;
@@ -60,12 +60,12 @@ public class QuestionHandeler : MonoBehaviour
 
         if ((triggerLeft || triggerRight) && isActivadedOnce)
         {
-            isActivadedOnce = true;
+            isActivadedOnce = false;
             displayActivated = !displayActivated;
         }
         else
         {
-            isActivadedOnce = false;
+            isActivadedOnce = true;
         }
     }
 
