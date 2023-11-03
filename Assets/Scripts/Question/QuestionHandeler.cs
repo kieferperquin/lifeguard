@@ -100,6 +100,7 @@ public class QuestionHandeler : MonoBehaviour
             foreachInt++;
             answersArray[foreachInt] = currentQuestionData.wrongAnswers[foreachInt - 1];
         }
+
         debug.text = "hello";
         debug.text = string.Join("", answersArray);
 
@@ -113,14 +114,27 @@ public class QuestionHandeler : MonoBehaviour
 
     void SetAnswers(string[] answersArray)
     {
-        //need to put a randomizer here
-        answerText1.text = answersArray[1];
-        answerObject1.tag = "correct";
-        answerText2.text = answersArray[2];
-        answerObject1.tag = "wrong";
-        answerText3.text = answersArray[3];
-        answerObject1.tag = "wrong";
-        answerText4.text = answersArray[4];
-        answerObject1.tag = "wrong";
+        int correctAnswer = Random.Range(1, 4);
+        int[] wrongAnswers = {2, 3, 4};
+        int randomWrongAnswer;
+
+        if (correctAnswer == 1)
+        {
+            answerText1.text = answersArray[1];
+            answerObject1.tag = "correct";
+            
+            randomWrongAnswer = Random.Range(0, wrongAnswers.Length);
+            answerText2.text = answersArray[wrongAnswers[randomWrongAnswer]];
+            answerObject2.tag = "wrong";
+            
+        }
+
+
+        /*else
+        {
+            wrongAnswer = Random.Range(2, 4);
+            answerText1.text = answersArray[wrongAnswer];
+            answerObject1.tag = "wrong";
+        }*/
     }
 }
