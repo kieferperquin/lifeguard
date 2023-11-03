@@ -61,6 +61,10 @@ public class QuestionHandeler : MonoBehaviour
             isActivadedOnce = false;
             displayActivated = !displayActivated;
         }
+        else if((triggerLeft || triggerRight) && !isActivadedOnce)
+        {
+            //do nothing but to make it so it does not give you epelepsy
+        }
         else
         {
             isActivadedOnce = true;
