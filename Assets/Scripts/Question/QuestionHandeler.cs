@@ -31,9 +31,7 @@ public class QuestionHandeler : MonoBehaviour
     private bool isActivadedOnce = true;
     #endregion
 
-    int correctAnswer;
     private List<int> wrongAnswers;
-    int randomWrongAnswer;
 
     [SerializeField] private Text debug;
     void Start()
@@ -97,18 +95,22 @@ public class QuestionHandeler : MonoBehaviour
         questionDisplayText.text = currentQuestionData.question;
         questionText.text = currentQuestionData.question;
 
-        // need to make something that will
-        // combine all the wrong answers into a list or array
+        string[] wrongAnswerArray = { };
 
-        SetAnswers(currentQuestionData);
+        for (int i = 0; i < currentQuestionData.wrongAnswers.Length; i++)
+        {
+            wrongAnswerArray[i] = currentQuestionData.wrongAnswers[i];
+        }
+
+        SetAnswers(currentQuestionData, wrongAnswerArray);
 
         displayActivated = false;
         currentData++;
     }
 
-    void SetAnswers(QuestionsSO currentQuestionData)
+    void SetAnswers(QuestionsSO currentQuestionData, string[] wrongAnswerArray)
     {
-        correctAnswer = Random.Range(1, 4);
+        int correctAnswer = Random.Range(1, 4);
         wrongAnswers = new List<int> {2, 3, 4};
 
         if (correctAnswer == 1)
@@ -116,43 +118,43 @@ public class QuestionHandeler : MonoBehaviour
             answerText1.text = currentQuestionData.correctAnswer;
             answerObject1.tag = "correct";
 
-            SetWrongAnswer(answerText2, answerObject2);
-            SetWrongAnswer(answerText3, answerObject3);
-            SetWrongAnswer(answerText4, answerObject4);
+            SetWrongAnswer(answerText2, answerObject2, wrongAnswerArray);
+            SetWrongAnswer(answerText3, answerObject3, wrongAnswerArray);
+            SetWrongAnswer(answerText4, answerObject4, wrongAnswerArray);
         }
         else if (correctAnswer == 2)
         {
             answerText2.text = currentQuestionData.correctAnswer;
             answerObject2.tag = "correct";
 
-            SetWrongAnswer(answerText1, answerObject1);
-            SetWrongAnswer(answerText3, answerObject3);
-            SetWrongAnswer(answerText4, answerObject4);
+            SetWrongAnswer(answerText1, answerObject1, wrongAnswerArray);
+            SetWrongAnswer(answerText3, answerObject3, wrongAnswerArray);
+            SetWrongAnswer(answerText4, answerObject4, wrongAnswerArray);
         }
         else if (correctAnswer == 3)
         {
             answerText3.text = currentQuestionData.correctAnswer;
             answerObject3.tag = "correct";
 
-            SetWrongAnswer(answerText1, answerObject1);
-            SetWrongAnswer(answerText2, answerObject2);
-            SetWrongAnswer(answerText4, answerObject4);
+            SetWrongAnswer(answerText1, answerObject1, wrongAnswerArray);
+            SetWrongAnswer(answerText2, answerObject2, wrongAnswerArray);
+            SetWrongAnswer(answerText4, answerObject4, wrongAnswerArray);
         }
         else if (correctAnswer == 4)
         {
             answerText4.text = currentQuestionData.correctAnswer;
             answerObject4.tag = "correct";
 
-            SetWrongAnswer(answerText1, answerObject1);
-            SetWrongAnswer(answerText2, answerObject2);
-            SetWrongAnswer(answerText3, answerObject3);
+            SetWrongAnswer(answerText1, answerObject1, wrongAnswerArray);
+            SetWrongAnswer(answerText2, answerObject2, wrongAnswerArray);
+            SetWrongAnswer(answerText3, answerObject3, wrongAnswerArray);
         }
     }
 
-    void SetWrongAnswer(Text answerText, GameObject answerObject)
+    void SetWrongAnswer(Text answerText, GameObject answerObject, string[] wrongAnswerArray)
     {
-        randomWrongAnswer = Random.Range(0, wrongAnswers.Count);
-        //answerText.text = answersArray[wrongAnswers[randomWrongAnswer]];
+        int randomWrongAnswer = Random.Range(0, wrongAnswers.Count);
+        answerText.text = wrongAnswerArray[wrongAnswers[randomWrongAnswer]];
         answerObject.tag = "wrong";
         wrongAnswers.RemoveAt(randomWrongAnswer);
     }
