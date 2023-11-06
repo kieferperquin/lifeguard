@@ -111,7 +111,7 @@ public class QuestionHandeler : MonoBehaviour
     void SetAnswers(QuestionsSO currentQuestionData, string[] wrongAnswerArray)
     {
         int correctAnswer = Random.Range(1, 4);
-        wrongAnswers = new List<int> {2, 3, 4};
+        wrongAnswers = new List<int> {1, 2, 3};
 
         if (correctAnswer == 1)
         {
@@ -153,7 +153,7 @@ public class QuestionHandeler : MonoBehaviour
 
     void SetWrongAnswer(Text answerText, GameObject answerObject, string[] wrongAnswerArray)
     {
-        int randomWrongAnswer = Random.Range(0, wrongAnswers.Count);
+        int randomWrongAnswer = Random.Range(1, wrongAnswers.Count);
         answerText.text = wrongAnswerArray[wrongAnswers[randomWrongAnswer]];
         answerObject.tag = "wrong";
         wrongAnswers.RemoveAt(randomWrongAnswer);
