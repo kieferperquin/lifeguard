@@ -111,7 +111,12 @@ public class QuestionHandeler : MonoBehaviour
     void SetAnswers(QuestionsSO currentQuestionData, string[] wrongAnswerArray)
     {
         int correctAnswer = Random.Range(1, 4);
-        wrongAnswers = new List<int> {1, 2, 3};
+        wrongAnswers = new List<int> { };
+
+        for (int i = 0; i < wrongAnswerArray.Length; i++)
+        {
+            wrongAnswers.Add(i);
+        }
 
         if (correctAnswer == 1)
         {
