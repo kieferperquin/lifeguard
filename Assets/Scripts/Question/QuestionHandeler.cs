@@ -44,7 +44,7 @@ public class QuestionHandeler : MonoBehaviour
         answerText3 = answerObject3.GetComponentInChildren<Text>();
         answerText4 = answerObject4.GetComponentInChildren<Text>();
 
-        SetQuestion();
+        SetNextQuestion();
     }
 
     void Update()
@@ -88,34 +88,41 @@ public class QuestionHandeler : MonoBehaviour
         }
     }
 
-    public void SetQuestion()
+    public void SetNextQuestion()
     {
         QuestionsSO currentQuestionData = questionsDataArray[currentData];
 
-        questionDisplayText.text = currentQuestionData.question;
-        questionText.text = currentQuestionData.question;
+        displayActivated = false;
 
+        SetQuestion(currentQuestionData);
         SetAnswers(currentQuestionData);
 
-        displayActivated = false;
         currentData++;
+    }
+    
+    void SetQuestion(QuestionsSO currentQuestionData)
+    {
+        questionDisplayText.text = currentQuestionData.question;
+        questionText.text = currentQuestionData.question;
     }
 
     void SetAnswers(QuestionsSO currentQuestionData)
     {
+        string[] correctAnswerArray = { };
         string[] wrongAnswerArray = { };
+
+        for (int i = 0; i < currentQuestionData.correctAnswers.Length; i++)
+        {
+            correctAnswerArray[i] = currentQuestionData.correctAnswers[i];
+        }
 
         for (int i = 0; i < currentQuestionData.wrongAnswers.Length; i++)
         {
             wrongAnswerArray[i] = currentQuestionData.wrongAnswers[i];
         }
 
-        string[] correctAnswerArray = { };
 
-        for (int i = 0; i < currentQuestionData.correctAnswers.Length; i++)
-        {
-            correctAnswerArray[i] = currentQuestionData.correctAnswers[i];
-        }
+        
 
         if (currentQuestionData.allCorrect)// true
         {

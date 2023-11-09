@@ -13,8 +13,13 @@ MonoBehaviour:
   m_Name: QuestionTest2
   m_EditorClassIdentifier: 
   question: what is 2 + 2
-  correctAnswer: 2 + 2 = 4
+  allCorrect: 0
+  correctAnswers:
+  - 2 + 2 = 4
   wrongAnswers:
   - 2 + 2 = 3
   - 2 + 2 = 2
   - 2 + 2 = 5
+  - 2 + 2 = 2
+  - 2 + 2 = 1
+  - 2 + 2 = 0

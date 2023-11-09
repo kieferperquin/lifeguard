@@ -10,20 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b438708ed8293b409270c88155fb890, type: 3}
-  m_Name: QuestionTest
+  m_Name: QuestionTest3
   m_EditorClassIdentifier: 
-  question: what is 1+1
-  allCorrect: 0
+  question: when there is a medical emergancy what do you do
+  allCorrect: 1
   correctAnswers:
-  - 1+1
-  - window
-  wrongAnswers:
-  - 1+1= 3
-  - 1+1= 4
-  - 1+1= 5
-  - 1+1= 6
-  - 1+1= 7
-  - 1+1= 1
-  - 1+1= 10
-  - 1+1= 0
-  - 1+1= -1
+  - call ambulance
+  - call shout there has bin an exident
+  - give medical care
+  - panic
+  wrongAnswers: []
