@@ -193,7 +193,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: press button = trigger
+  m_Text: 'press button = trigger
+
+    answer/look at question = grip
+
+    pause
+    video = A or X'
 --- !u!222 &3799588
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1149,7 +1154,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: hi
 --- !u!222 &286966182
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1601,6 +1606,7 @@ GameObject:
   - component: {fileID: 408929339}
   - component: {fileID: 408929338}
   - component: {fileID: 408929341}
+  - component: {fileID: 408929342}
   m_Layer: 5
   m_Name: StartGameButton
   m_TagString: UI-Interactable
@@ -1672,9 +1678,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 111923721}
+      - m_Target: {fileID: 408929342}
         m_TargetAssemblyTypeName: SceneSwitcher, Assembly-CSharp
-        m_MethodName: game
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1743,6 +1749,52 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 160, y: 30, z: 1}
   m_Center: {x: -0.03, y: -0.0075, z: 0}
+--- !u!114 &408929342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408929336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2360bc902734ea04a9c5b39bcc8f8acd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MenuSceneStuff: {fileID: 372141929}
+  VideoSceneStuff: {fileID: 35445953}
+--- !u!1 &419184515
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 419184516}
+  m_Layer: 0
+  m_Name: -_-TEMP-_-
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &419184516
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419184515}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 962441609}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &450545107
 GameObject:
   m_ObjectHideFlags: 0
@@ -3120,11 +3172,7 @@ MonoBehaviour:
   m_Text: Lorem Ipsum is simply dummy text of the printing and typesetting industry.
     Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
     when an unknown printer took a galley of type and scrambled it to make a type
-    specimen book. It has survived not only five centuries, but also the leap into
-    electronic typesetting, remaining essentially unchanged. It was popularised in
-    the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-    and more recently with desktop publishing software like Aldus PageMaker including
-    versions of Lorem Ipsum.
+    specimen book. It has survived not only five centuries
 --- !u!222 &782875186
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3415,7 +3463,7 @@ MonoBehaviour:
   answerObject4: {fileID: 151571293}
   questionAnswerBoard: {fileID: 1538245171}
   questionDisplayBoard: {fileID: 689158373}
-  debug: {fileID: 0}
+  debug: {fileID: 286966181}
 --- !u!1 &962441605
 GameObject:
   m_ObjectHideFlags: 0
@@ -3511,7 +3559,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 286966180}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 419184516}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -8117,6 +8165,6 @@ SceneRoots:
   - {fileID: 1926018955}
   - {fileID: 481770527}
   - {fileID: 1045574047}
-  - {fileID: 962441609}
   - {fileID: 372141930}
   - {fileID: 35445954}
+  - {fileID: 419184516}
