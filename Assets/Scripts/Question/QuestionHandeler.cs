@@ -31,7 +31,7 @@ public class QuestionHandeler : MonoBehaviour
     private bool isActivadedOnce = true;
     #endregion
 
-    private List<int> wrongAnswers;
+    private List<int> arrayAmount;
 
     [SerializeField] private Text debug;
     void Start()
@@ -95,6 +95,14 @@ public class QuestionHandeler : MonoBehaviour
         questionDisplayText.text = currentQuestionData.question;
         questionText.text = currentQuestionData.question;
 
+        SetAnswers(currentQuestionData);
+
+        displayActivated = false;
+        currentData++;
+    }
+
+    void SetAnswers(QuestionsSO currentQuestionData)
+    {
         string[] wrongAnswerArray = { };
 
         for (int i = 0; i < currentQuestionData.wrongAnswers.Length; i++)
@@ -102,26 +110,51 @@ public class QuestionHandeler : MonoBehaviour
             wrongAnswerArray[i] = currentQuestionData.wrongAnswers[i];
         }
 
-        SetAnswers(currentQuestionData, wrongAnswerArray);
+        string[] correctAnswerArray = { };
 
-        displayActivated = false;
-        currentData++;
+        for (int i = 0; i < currentQuestionData.correctAnswers.Length; i++)
+        {
+            correctAnswerArray[i] = currentQuestionData.correctAnswers[i];
+        }
+
+        if (currentQuestionData.allCorrect)// true
+        {
+            AllCorrectAsnwers(correctAnswerArray);
+        }
+        else
+        {
+            OneCorrectAnswer(wrongAnswerArray, correctAnswerArray);
+        }
+    }
+    void AllCorrectAsnwers(string[] correctAnswerArray)
+    {
+        arrayAmount = new List<int> { };
+
+        for (int i = 0; i < correctAnswerArray.Length; i++)
+        {
+            arrayAmount.Add(i);
+        }
+
+        SetCorrectAnswer(answerText1, answerObject1, correctAnswerArray);
+        SetCorrectAnswer(answerText2, answerObject2, correctAnswerArray);
+        SetCorrectAnswer(answerText3, answerObject3, correctAnswerArray);
+        SetCorrectAnswer(answerText4, answerObject4, correctAnswerArray);
     }
 
-    void SetAnswers(QuestionsSO currentQuestionData, string[] wrongAnswerArray)
+    void OneCorrectAnswer(string[] wrongAnswerArray, string[] correctAnswerArray)
     {
         int correctAnswer = Random.Range(1, 4);
-        wrongAnswers = new List<int> { };
+
+        arrayAmount = new List<int> { };
 
         for (int i = 0; i < wrongAnswerArray.Length; i++)
         {
-            wrongAnswers.Add(i);
+            arrayAmount.Add(i);
         }
 
         if (correctAnswer == 1)
         {
-            answerText1.text = currentQuestionData.correctAnswer;
-            answerObject1.tag = "correct";
+            SetCorrectAnswer(answerText1, answerObject1, correctAnswerArray);
 
             SetWrongAnswer(answerText2, answerObject2, wrongAnswerArray);
             SetWrongAnswer(answerText3, answerObject3, wrongAnswerArray);
@@ -129,8 +162,7 @@ public class QuestionHandeler : MonoBehaviour
         }
         else if (correctAnswer == 2)
         {
-            answerText2.text = currentQuestionData.correctAnswer;
-            answerObject2.tag = "correct";
+            SetCorrectAnswer(answerText2, answerObject2, correctAnswerArray);
 
             SetWrongAnswer(answerText1, answerObject1, wrongAnswerArray);
             SetWrongAnswer(answerText3, answerObject3, wrongAnswerArray);
@@ -138,8 +170,7 @@ public class QuestionHandeler : MonoBehaviour
         }
         else if (correctAnswer == 3)
         {
-            answerText3.text = currentQuestionData.correctAnswer;
-            answerObject3.tag = "correct";
+            SetCorrectAnswer(answerText3, answerObject3, correctAnswerArray);
 
             SetWrongAnswer(answerText1, answerObject1, wrongAnswerArray);
             SetWrongAnswer(answerText2, answerObject2, wrongAnswerArray);
@@ -147,8 +178,7 @@ public class QuestionHandeler : MonoBehaviour
         }
         else if (correctAnswer == 4)
         {
-            answerText4.text = currentQuestionData.correctAnswer;
-            answerObject4.tag = "correct";
+            SetCorrectAnswer(answerText4, answerObject4, correctAnswerArray);
 
             SetWrongAnswer(answerText1, answerObject1, wrongAnswerArray);
             SetWrongAnswer(answerText2, answerObject2, wrongAnswerArray);
@@ -156,11 +186,19 @@ public class QuestionHandeler : MonoBehaviour
         }
     }
 
+    void SetCorrectAnswer(Text answerText, GameObject answerObject, string[] correctAnswerArray)
+    {
+        int randomCorrectAnswer = Random.Range(1, arrayAmount.Count);
+        answerText.text = correctAnswerArray[randomCorrectAnswer];
+        answerObject.tag = "correct";
+        arrayAmount.RemoveAt(randomCorrectAnswer);
+    }
+
     void SetWrongAnswer(Text answerText, GameObject answerObject, string[] wrongAnswerArray)
     {
-        int randomWrongAnswer = Random.Range(1, wrongAnswers.Count);
-        answerText.text = wrongAnswerArray[wrongAnswers[randomWrongAnswer]];
+        int randomWrongAnswer = Random.Range(1, arrayAmount.Count);
+        answerText.text = wrongAnswerArray[arrayAmount[randomWrongAnswer]];
         answerObject.tag = "wrong";
-        wrongAnswers.RemoveAt(randomWrongAnswer);
+        arrayAmount.RemoveAt(randomWrongAnswer);
     }
 }

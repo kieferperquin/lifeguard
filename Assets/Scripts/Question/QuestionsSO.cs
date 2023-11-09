@@ -9,7 +9,9 @@ public class QuestionsSO : ScriptableObject
 
     public string question;
 
-    public string correctAnswer;
+    public bool allCorrect;
+
+    public string[] correctAnswers;
 
     public string[] wrongAnswers;
 }
