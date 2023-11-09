@@ -122,8 +122,6 @@ public class QuestionHandeler : MonoBehaviour
         }
 
 
-        
-
         if (currentQuestionData.allCorrect)// true
         {
             AllCorrectAsnwers(correctAnswerArray);
