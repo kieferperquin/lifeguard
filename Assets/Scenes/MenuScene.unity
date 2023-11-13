@@ -682,8 +682,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 2, z: 2}
-  m_Center: {x: -0.17980784, y: -0.0074997544, z: 0}
+  m_Size: {x: 70, y: 30, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &151571295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1222,8 +1222,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 2, z: 2}
-  m_Center: {x: -0.17980784, y: -0.0074997544, z: 0}
+  m_Size: {x: 70, y: 30, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &327829003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1606,7 +1606,6 @@ GameObject:
   - component: {fileID: 408929339}
   - component: {fileID: 408929338}
   - component: {fileID: 408929341}
-  - component: {fileID: 408929342}
   m_Layer: 5
   m_Name: StartGameButton
   m_TagString: UI-Interactable
@@ -1678,7 +1677,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 408929342}
+      - m_Target: {fileID: 1660744029}
         m_TargetAssemblyTypeName: MenuToVideoSwitch, Assembly-CSharp
         m_MethodName: Switch
         m_Mode: 1
@@ -1749,20 +1748,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 160, y: 30, z: 1}
   m_Center: {x: -0.03, y: -0.0075, z: 0}
---- !u!114 &408929342
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 408929336}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2360bc902734ea04a9c5b39bcc8f8acd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MenuSceneStuff: {fileID: 372141929}
-  VideoSceneStuff: {fileID: 35445953}
 --- !u!1 &419184515
 GameObject:
   m_ObjectHideFlags: 0
@@ -3606,8 +3591,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 2, z: 2}
-  m_Center: {x: -0.17980784, y: -0.0074997544, z: 0}
+  m_Size: {x: 70, y: 30, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1030262283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3816,8 +3801,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 2, z: 2}
-  m_Center: {x: -0.17980784, y: -0.0074997544, z: 0}
+  m_Size: {x: 70, y: 30, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1061237476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5588,7 +5573,7 @@ Transform:
   m_GameObject: {fileID: 1538245171}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -195, z: -850}
+  m_LocalPosition: {x: 0, y: -195, z: -545.5}
   m_LocalScale: {x: 0.024999999, y: 0.024999999, z: 0.024999999}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -5818,6 +5803,52 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &1660744028
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1660744030}
+  - component: {fileID: 1660744029}
+  m_Layer: 0
+  m_Name: ScriptManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1660744029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660744028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2360bc902734ea04a9c5b39bcc8f8acd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MenuSceneStuff: {fileID: 372141929}
+  VideoSceneStuff: {fileID: 35445953}
+--- !u!4 &1660744030
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660744028}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1683243251
 GameObject:
   m_ObjectHideFlags: 0
@@ -5857,8 +5888,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 2, z: 2}
-  m_Center: {x: -0.17980784, y: -0.0074997544, z: 0}
+  m_Size: {x: 70, y: 30, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1683243253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6012,8 +6043,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2, y: 2, z: 2}
-  m_Center: {x: -0.17980784, y: -0.0074997544, z: 0}
+  m_Size: {x: 70, y: 30, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1701068670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8165,6 +8196,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 1926018955}
   - {fileID: 481770527}
+  - {fileID: 1660744030}
   - {fileID: 1045574047}
   - {fileID: 372141930}
   - {fileID: 35445954}
