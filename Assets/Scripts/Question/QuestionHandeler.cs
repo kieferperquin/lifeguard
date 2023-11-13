@@ -44,7 +44,9 @@ public class QuestionHandeler : MonoBehaviour
         answerText3 = answerObject3.GetComponentInChildren<Text>();
         answerText4 = answerObject4.GetComponentInChildren<Text>();
 
+        debug.text = "set next question";
         SetNextQuestion();
+        debug.text = "finished setting question and currentData = " + currentData;
     }
 
     void Update()
@@ -94,10 +96,17 @@ public class QuestionHandeler : MonoBehaviour
 
         displayActivated = false;
 
+        debug.text = "set question";
+
         SetQuestion(currentQuestionData);
+
+        debug.text = "question have been set now setting answers";
+
         SetAnswers(currentQuestionData);
 
         currentData++;
+
+        debug.text = "questions have been set and currentData = " + currentData;
     }
     
     void SetQuestion(QuestionsSO currentQuestionData)
@@ -111,23 +120,32 @@ public class QuestionHandeler : MonoBehaviour
         string[] correctAnswerArray = { };
         string[] wrongAnswerArray = { };
 
+        debug.text = "made array's";
+
         for (int i = 0; i < currentQuestionData.correctAnswers.Length; i++)
         {
             correctAnswerArray[i] = currentQuestionData.correctAnswers[i];
         }
+
+        debug.text = "put every correct answer in the correctAnswerArray";
 
         for (int i = 0; i < currentQuestionData.wrongAnswers.Length; i++)
         {
             wrongAnswerArray[i] = currentQuestionData.wrongAnswers[i];
         }
 
+        debug.text = "put every wrong answer in the wrongAnswerArray";
 
         if (currentQuestionData.allCorrect)// true
         {
+            debug.text = "only correct answers";
+
             AllCorrectAsnwers(correctAnswerArray);
         }
         else
         {
+            debug.text = "one correct answer";
+
             OneCorrectAnswer(wrongAnswerArray, correctAnswerArray);
         }
     }
@@ -152,6 +170,8 @@ public class QuestionHandeler : MonoBehaviour
 
         arrayAmount = new List<int> { };
 
+        debug.text = "made list and the random number = " + correctAnswer;
+
         for (int i = 0; i < wrongAnswerArray.Length; i++)
         {
             arrayAmount.Add(i);
@@ -161,49 +181,113 @@ public class QuestionHandeler : MonoBehaviour
         {
             SetCorrectAnswer(answerText1, answerObject1, correctAnswerArray);
 
+            debug.text = "set correct answer for 1";
+
             SetWrongAnswer(answerText2, answerObject2, wrongAnswerArray);
+
+            debug.text = "set wrong answer1 for 1";
+
             SetWrongAnswer(answerText3, answerObject3, wrongAnswerArray);
+
+            debug.text = "set wrong answerw for 1";
+
             SetWrongAnswer(answerText4, answerObject4, wrongAnswerArray);
+
+            debug.text = "set wrong answer3 for 1";
+
         }
         else if (correctAnswer == 2)
         {
             SetCorrectAnswer(answerText2, answerObject2, correctAnswerArray);
 
+            debug.text = "set correct answer for 2";
+
             SetWrongAnswer(answerText1, answerObject1, wrongAnswerArray);
+
+            debug.text = "set wrong answer1 for 2";
+
             SetWrongAnswer(answerText3, answerObject3, wrongAnswerArray);
+
+            debug.text = "set wrong answer2 for 2";
+
             SetWrongAnswer(answerText4, answerObject4, wrongAnswerArray);
+
+            debug.text = "set wrong answer3 for 2";
+
         }
         else if (correctAnswer == 3)
         {
             SetCorrectAnswer(answerText3, answerObject3, correctAnswerArray);
 
+            debug.text = "set correct answer for 3";
+
             SetWrongAnswer(answerText1, answerObject1, wrongAnswerArray);
+
+            debug.text = "set wrong answer1 for 3";
+
             SetWrongAnswer(answerText2, answerObject2, wrongAnswerArray);
+
+            debug.text = "set wrong answer2 for 3";
+
             SetWrongAnswer(answerText4, answerObject4, wrongAnswerArray);
+
+            debug.text = "set wrong answer3 for 3";
+
         }
         else if (correctAnswer == 4)
         {
             SetCorrectAnswer(answerText4, answerObject4, correctAnswerArray);
 
+            debug.text = "set correct answer for 4";
+
             SetWrongAnswer(answerText1, answerObject1, wrongAnswerArray);
+
+            debug.text = "set wrong answer1 for 4";
+
             SetWrongAnswer(answerText2, answerObject2, wrongAnswerArray);
+
+            debug.text = "set wrong answer2 for 4";
+
             SetWrongAnswer(answerText3, answerObject3, wrongAnswerArray);
+
+            debug.text = "set wrong answer3 for 4";
+
         }
     }
 
     void SetCorrectAnswer(Text answerText, GameObject answerObject, string[] correctAnswerArray)
     {
+        debug.text = "start set correct answer";
+
         int randomCorrectAnswer = Random.Range(1, arrayAmount.Count);
         answerText.text = correctAnswerArray[randomCorrectAnswer];
+
+        debug.text = "set tag correct answer";
+
         answerObject.tag = "correct";
+
+        debug.text = "end before removeAt set correct answer and after tag set";
+
         arrayAmount.RemoveAt(randomCorrectAnswer);
+
+        debug.text = "end set correct answer";
     }
 
     void SetWrongAnswer(Text answerText, GameObject answerObject, string[] wrongAnswerArray)
     {
+        debug.text = "start set wrong answer";
+
         int randomWrongAnswer = Random.Range(1, arrayAmount.Count);
         answerText.text = wrongAnswerArray[arrayAmount[randomWrongAnswer]];
+
+        debug.text = "set tag wrong answer";
+
         answerObject.tag = "wrong";
+
+        debug.text = "end before removeAt set wrong answer and after tag set";
+
         arrayAmount.RemoveAt(randomWrongAnswer);
+
+        debug.text = "end set wrong answer";
     }
 }
