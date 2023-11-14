@@ -18,7 +18,8 @@ public class QuestionHandeler : MonoBehaviour
     #region question variables
     [SerializeField] private QuestionsSO[] questionsDataArray;
 
-    private int currentData = 0;
+    private int currentData;
+    private int maxDataAmount;
 
     [SerializeField] private Text questionDisplayText, questionText;
     [SerializeField] private GameObject answerObject1, answerObject2, answerObject3, answerObject4;
@@ -37,6 +38,9 @@ public class QuestionHandeler : MonoBehaviour
     [SerializeField] private Text debug;
     void Start()
     {
+        currentData = 0;
+        maxDataAmount = questionsDataArray.Length;
+
         leftButton = answerButtonLeft.ToString();
         rightButton = answerButtonRight.ToString();
         
@@ -105,7 +109,10 @@ public class QuestionHandeler : MonoBehaviour
 
         SetAnswers(currentQuestionData);
 
-        currentData++;
+        if (currentData >= maxDataAmount)
+        {
+            currentData++;
+        }
 
         debug.text = "questions have been set and currentData = " + currentData;
     }
