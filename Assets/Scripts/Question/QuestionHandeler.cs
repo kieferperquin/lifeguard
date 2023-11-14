@@ -117,36 +117,17 @@ public class QuestionHandeler : MonoBehaviour
 
     void SetAnswers(QuestionsSO currentQuestionData)
     {
-        string[] correctAnswerArray = { };
-        string[] wrongAnswerArray = { };
-
-        debug.text = "made array's";
-
-        for (int i = 0; i < currentQuestionData.correctAnswers.Length; i++)
-        {
-            correctAnswerArray[i] = currentQuestionData.correctAnswers[i];
-        }
-
-        debug.text = "put every correct answer in the correctAnswerArray";
-
-        for (int i = 0; i < currentQuestionData.wrongAnswers.Length; i++)
-        {
-            wrongAnswerArray[i] = currentQuestionData.wrongAnswers[i];
-        }
-
-        debug.text = "put every wrong answer in the wrongAnswerArray";
-
         if (currentQuestionData.allCorrect)// true
         {
             debug.text = "only correct answers";
 
-            AllCorrectAsnwers(correctAnswerArray);
+            AllCorrectAsnwers(currentQuestionData.correctAnswers);
         }
         else
         {
             debug.text = "one correct answer";
 
-            OneCorrectAnswer(wrongAnswerArray, correctAnswerArray);
+            OneCorrectAnswer(currentQuestionData.wrongAnswers, currentQuestionData.correctAnswers);
         }
     }
     void AllCorrectAsnwers(string[] correctAnswerArray)
