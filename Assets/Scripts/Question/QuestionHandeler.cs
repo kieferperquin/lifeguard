@@ -238,9 +238,10 @@ public class QuestionHandeler : MonoBehaviour
 
     void SetCorrectAnswer(Text answerText, GameObject answerObject, string[] correctAnswerArray)
     {
-        debug.text = "start set correct answer";
-
         int randomCorrectAnswer = Random.Range(1, arrayAmount.Count);
+
+        debug.text = "start set correct answer random is = " + randomCorrectAnswer;
+
         answerText.text = correctAnswerArray[randomCorrectAnswer];
 
         debug.text = "set tag correct answer";
