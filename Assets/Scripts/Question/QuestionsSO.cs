@@ -11,6 +11,10 @@ public class QuestionsSO : ScriptableObject
 
     public bool allCorrect;
 
+    public List<string> correctAnswerList = new List<string>();
+
+    public List<string> wrongAnswerList = new List<string>();
+
     public string[] correctAnswers;
 
     public string[] wrongAnswers;
