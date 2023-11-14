@@ -103,7 +103,7 @@ public class QuestionHandeler : MonoBehaviour
 
         SetAnswers(currentQuestionData);
 
-        if (currentData >= maxDataAmount)
+        if (currentData <= maxDataAmount)
         {
             currentData++;
         }
