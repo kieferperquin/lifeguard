@@ -14,6 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   question: when there is a medical emergancy what do you do
   allCorrect: 1
+  correctAnswerList:
+  - call ambulance
+  - call shout there has bin an exident
+  - give medical care
+  - panic
+  wrongAnswerList: []
   correctAnswers:
   - call ambulance
   - call shout there has bin an exident
