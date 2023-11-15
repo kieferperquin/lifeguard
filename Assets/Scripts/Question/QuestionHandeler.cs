@@ -103,15 +103,6 @@ public class QuestionHandeler : MonoBehaviour
         SetAnswers(questionsDataArray[currentData]);
 
         currentData++;
-
-        if (currentData == 1)
-        {
-            debug.text = "currentData = " + currentData;
-        }
-        else
-        {
-            debug.text = "currentData = " + currentData + " oegaboega";
-        }
     }
 
     void RemoveText()
@@ -159,12 +150,8 @@ public class QuestionHandeler : MonoBehaviour
     {
         int correctAnswer = Random.Range(1, 4);
 
-        debug.text = "made random going to make lists";
-
         correctListAmount = new List<int>();
         wrongListAmount = new List<int>();
-
-        debug.text = "made lists now adding shit to the lists";
 
         for (int i = 0; i < correctAnswerList.Count; i++)
         {
@@ -176,22 +163,13 @@ public class QuestionHandeler : MonoBehaviour
             wrongListAmount.Add(i);
         }
 
-        correctAnswer = 1;
-        debug.text = "added shit to the lists now selecting the random and setting the answers";
-
-
         if (correctAnswer == 1)
         {
-
             SetCorrectAnswer(answerText1, answerObject1, correctAnswerList);
-            debug.text = "correct answer has been set";
 
             SetWrongAnswer(answerText2, answerObject2, wrongAnswerList);
-            debug.text = "wrong answer 1 has been set";
             SetWrongAnswer(answerText3, answerObject3, wrongAnswerList);
-            debug.text = "wrong answer 2 has been set";
             SetWrongAnswer(answerText4, answerObject4, wrongAnswerList);
-            debug.text = "wrong answer 3 has been set";
         }
         else if (correctAnswer == 2)
         {
@@ -229,16 +207,9 @@ public class QuestionHandeler : MonoBehaviour
 
     void SetWrongAnswer(Text answerText, GameObject answerObject, List<string> wrongAnswerList)
     {
-        if (wrongAnswerList.Count == 1)
-        {
-            answerText.text = wrongAnswerList[0];
-        }
-        else
-        {
-            int randomWrongAnswer = Random.Range(0, wrongListAmount.Count);
-            answerText.text = wrongAnswerList[wrongListAmount[randomWrongAnswer]];
-            wrongListAmount.RemoveAt(randomWrongAnswer);
-        }
+        int randomWrongAnswer = Random.Range(0, wrongListAmount.Count);
+        answerText.text = wrongAnswerList[wrongListAmount[randomWrongAnswer]];
+        wrongListAmount.RemoveAt(randomWrongAnswer);
         answerObject.tag = "wrong";
     }
 }
