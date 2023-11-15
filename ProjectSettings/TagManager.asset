@@ -5,8 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - UI-Interactable
-  - correct
   - Wrong
+  - Correct
   layers:
   - Default
   - TransparentFX
@@ -14,7 +14,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - InteractableUI
   - 
   - 
   - 

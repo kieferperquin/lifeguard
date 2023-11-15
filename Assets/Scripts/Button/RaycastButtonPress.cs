@@ -15,12 +15,18 @@ public class RaycastButtonPress : MonoBehaviour
     private GameObject button;
     private string buttonTrigger;
 
+    private int interactableUILayer;
+
     public float sens;
 
     private bool pressedOnce = true;
 
+    [SerializeField] private Text debug;
+
     void Start()
     {
+        interactableUILayer = LayerMask.NameToLayer("InteractableUI");
+
         RayInteractor = controller.GetComponent<XRRayInteractor>();
     }
 
@@ -35,7 +41,8 @@ public class RaycastButtonPress : MonoBehaviour
         RaycastHit res;
         if (RayInteractor.TryGetCurrent3DRaycastHit(out res))
         {
-            if (res.collider.CompareTag("UI-Interactable"))
+            debug.text = res.collider.tag;
+            if (res.transform.gameObject.layer == interactableUILayer)
             {
                 bool trigger = Input.GetAxis(buttonTrigger) >= sens;
 

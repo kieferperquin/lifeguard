@@ -656,9 +656,9 @@ GameObject:
   - component: {fileID: 151571296}
   - component: {fileID: 151571295}
   - component: {fileID: 151571294}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: AnswerButton4
-  m_TagString: UI-Interactable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -811,9 +811,9 @@ GameObject:
   - component: {fileID: 172087825}
   - component: {fileID: 172087824}
   - component: {fileID: 172087827}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: QuitGameButton
-  m_TagString: UI-Interactable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1176,9 +1176,9 @@ GameObject:
   - component: {fileID: 327829004}
   - component: {fileID: 327829003}
   - component: {fileID: 327829002}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: NextClipButton
-  m_TagString: UI-Interactable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1427,7 +1427,7 @@ MonoBehaviour:
     m_FontSize: 15
     m_FontStyle: 0
     m_BestFit: 1
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 15
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -1606,9 +1606,9 @@ GameObject:
   - component: {fileID: 408929339}
   - component: {fileID: 408929338}
   - component: {fileID: 408929341}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: StartGameButton
-  m_TagString: UI-Interactable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1940,9 +1940,9 @@ GameObject:
   - component: {fileID: 509864539}
   - component: {fileID: 509864538}
   - component: {fileID: 509864537}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: NextQuestionButton
-  m_TagString: UI-Interactable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2129,6 +2129,7 @@ MonoBehaviour:
   buttons: 5
   controller: {fileID: 560173113}
   sens: 0.5
+  debug: {fileID: 286966181}
 --- !u!1 &560173113
 GameObject:
   m_ObjectHideFlags: 0
@@ -3289,7 +3290,7 @@ MonoBehaviour:
     m_FontSize: 15
     m_FontStyle: 0
     m_BestFit: 1
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 15
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -3565,9 +3566,9 @@ GameObject:
   - component: {fileID: 1030262284}
   - component: {fileID: 1030262283}
   - component: {fileID: 1030262282}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: AnswerButton3
-  m_TagString: UI-Interactable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3755,9 +3756,9 @@ GameObject:
   - component: {fileID: 1061237477}
   - component: {fileID: 1061237476}
   - component: {fileID: 1061237475}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: QuitGameButton
-  m_TagString: UI-Interactable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5216,7 +5217,7 @@ MonoBehaviour:
     m_FontSize: 15
     m_FontStyle: 0
     m_BestFit: 1
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 15
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -5371,7 +5372,7 @@ MonoBehaviour:
     m_FontSize: 15
     m_FontStyle: 0
     m_BestFit: 1
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 15
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -5435,6 +5436,7 @@ MonoBehaviour:
   buttons: 23
   controller: {fileID: 1351346252}
   sens: 0.5
+  debug: {fileID: 286966181}
 --- !u!1 &1531012610
 GameObject:
   m_ObjectHideFlags: 0
@@ -5862,9 +5864,9 @@ GameObject:
   - component: {fileID: 1683243254}
   - component: {fileID: 1683243253}
   - component: {fileID: 1683243252}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: AnswerButton2
-  m_TagString: UI-Interactable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6017,9 +6019,9 @@ GameObject:
   - component: {fileID: 1701068671}
   - component: {fileID: 1701068670}
   - component: {fileID: 1701068669}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: AnswerButton1
-  m_TagString: UI-Interactable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
