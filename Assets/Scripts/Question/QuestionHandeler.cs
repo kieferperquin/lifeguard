@@ -222,9 +222,17 @@ public class QuestionHandeler : MonoBehaviour
     void SetCorrectAnswer(Text answerText, GameObject answerObject, List<string> correctAnswerList)
     {
         int randomCorrectAnswer = Random.Range(1, correctListAmount.Count);
+
+        debug.text = "made random a random int and its " + randomCorrectAnswer + "correctListAmount.Count = " + correctAnswerList.Count;
+
         answerText.text = correctAnswerList[correctListAmount[randomCorrectAnswer]];
+        debug.text = "set the answer";
+
         answerObject.tag = "correct";
+        debug.text = "set tag";
+
         correctListAmount.RemoveAt(randomCorrectAnswer);
+        debug.text = "removed from list";
     }
 
     void SetWrongAnswer(Text answerText, GameObject answerObject, List<string> wrongAnswerList)
