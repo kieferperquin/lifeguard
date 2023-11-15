@@ -221,25 +221,31 @@ public class QuestionHandeler : MonoBehaviour
 
     void SetCorrectAnswer(Text answerText, GameObject answerObject, List<string> correctAnswerList)
     {
-        int randomCorrectAnswer = Random.Range(1, correctListAmount.Count);
-
-        debug.text = "made random a random int and its " + randomCorrectAnswer + "correctListAmount.Count = " + correctAnswerList.Count;
-
-        answerText.text = correctAnswerList[correctListAmount[randomCorrectAnswer]];
-        debug.text = "set the answer";
-
+        if (correctListAmount.Count == 1)
+        {
+            answerText.text = correctAnswerList[1];
+        }
+        else
+        {
+            int randomCorrectAnswer = Random.Range(1, correctListAmount.Count);
+            answerText.text = correctAnswerList[correctListAmount[randomCorrectAnswer]];
+            correctListAmount.RemoveAt(randomCorrectAnswer);
+        }
         answerObject.tag = "correct";
-        debug.text = "set tag";
-
-        correctListAmount.RemoveAt(randomCorrectAnswer);
-        debug.text = "removed from list";
     }
 
     void SetWrongAnswer(Text answerText, GameObject answerObject, List<string> wrongAnswerList)
     {
-        int randomWrongAnswer = Random.Range(1, wrongListAmount.Count);
-        answerText.text = wrongAnswerList[wrongListAmount[randomWrongAnswer]];
+        if (wrongAnswerList.Count == 1)
+        {
+            answerText.text = wrongAnswerList[1];
+        }
+        else
+        {
+            int randomWrongAnswer = Random.Range(1, wrongListAmount.Count);
+            answerText.text = wrongAnswerList[wrongListAmount[randomWrongAnswer]];
+            wrongListAmount.RemoveAt(randomWrongAnswer);
+        }
         answerObject.tag = "wrong";
-        wrongListAmount.RemoveAt(randomWrongAnswer);
     }
 }
