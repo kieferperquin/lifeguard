@@ -98,6 +98,8 @@ public class QuestionHandeler : MonoBehaviour
 
         displayActivated = false;
 
+        RemoveText();
+
         SetQuestion(currentQuestionData);
 
         SetAnswers(currentQuestionData);
@@ -106,7 +108,16 @@ public class QuestionHandeler : MonoBehaviour
 
         debug.text = "currentData = " + currentData + ", maxDataAmount = " + maxDataAmount;
     }
-    
+
+    void RemoveText()
+    {
+        answerText1.text = "";
+        answerText2.text = "";
+        answerText3.text = "";
+        answerText4.text = "";
+    }
+
+
     void SetQuestion(QuestionsSO currentQuestionData)
     {
         questionDisplayText.text = currentQuestionData.question;
