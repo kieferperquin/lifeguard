@@ -221,7 +221,7 @@ public class QuestionHandeler : MonoBehaviour
 
     void SetCorrectAnswer(Text answerText, GameObject answerObject, List<string> correctAnswerList)
     {
-        int randomCorrectAnswer = Random.Range(0, correctListAmount.Count -1);
+        int randomCorrectAnswer = Random.Range(0, correctListAmount.Count);
         answerText.text = correctAnswerList[correctListAmount[randomCorrectAnswer]];
         correctListAmount.RemoveAt(randomCorrectAnswer);
         answerObject.tag = "correct";
