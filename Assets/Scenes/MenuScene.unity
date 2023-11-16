@@ -728,6 +728,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 952743515}
+        m_TargetAssemblyTypeName: AnswerCheck, Assembly-CSharp
+        m_MethodName: CheckAnswer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 76314437}
         m_TargetAssemblyTypeName: VideoClipCycle, Assembly-CSharp
         m_MethodName: NextClip
@@ -3396,6 +3408,7 @@ GameObject:
   m_Component:
   - component: {fileID: 952743513}
   - component: {fileID: 952743514}
+  - component: {fileID: 952743515}
   m_Layer: 5
   m_Name: QuestionHandeler
   m_TagString: Untagged
@@ -3451,6 +3464,20 @@ MonoBehaviour:
   questionAnswerBoard: {fileID: 1538245171}
   questionDisplayBoard: {fileID: 689158373}
   debug: {fileID: 286966181}
+--- !u!114 &952743515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952743512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d2772d563bb65d43b287fd0866903f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: {fileID: 286966181}
+  videoPlayer: {fileID: 76314438}
 --- !u!1 &962441605
 GameObject:
   m_ObjectHideFlags: 0
@@ -3638,6 +3665,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 952743515}
+        m_TargetAssemblyTypeName: AnswerCheck, Assembly-CSharp
+        m_MethodName: CheckAnswer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 76314437}
         m_TargetAssemblyTypeName: VideoClipCycle, Assembly-CSharp
         m_MethodName: NextClip
@@ -5936,6 +5975,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 952743515}
+        m_TargetAssemblyTypeName: AnswerCheck, Assembly-CSharp
+        m_MethodName: CheckAnswer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 76314437}
         m_TargetAssemblyTypeName: VideoClipCycle, Assembly-CSharp
         m_MethodName: NextClip
@@ -6091,6 +6142,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 952743515}
+        m_TargetAssemblyTypeName: AnswerCheck, Assembly-CSharp
+        m_MethodName: CheckAnswer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 76314437}
         m_TargetAssemblyTypeName: VideoClipCycle, Assembly-CSharp
         m_MethodName: NextClip
