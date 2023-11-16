@@ -202,7 +202,7 @@ public class QuestionHandeler : MonoBehaviour
         int randomCorrectAnswer = Random.Range(0, correctListAmount.Count);
         answerText.text = correctAnswerList[correctListAmount[randomCorrectAnswer]];
         correctListAmount.RemoveAt(randomCorrectAnswer);
-        answerObject.tag = "correct";
+        answerObject.tag = "Correct";
     }
 
     void SetWrongAnswer(Text answerText, GameObject answerObject, List<string> wrongAnswerList)
@@ -210,6 +210,6 @@ public class QuestionHandeler : MonoBehaviour
         int randomWrongAnswer = Random.Range(0, wrongListAmount.Count);
         answerText.text = wrongAnswerList[wrongListAmount[randomWrongAnswer]];
         wrongListAmount.RemoveAt(randomWrongAnswer);
-        answerObject.tag = "wrong";
+        answerObject.tag = "Wrong";
     }
 }
