@@ -25,11 +25,7 @@ public class VideoClipCycle : MonoBehaviour
 
         CurrClip++;
 
-        if (CurrClip >= MaxClip)
-        {
-
-        }
-        else
+        if (CurrClip <= MaxClip)
         {
             Player.clip = clips[CurrClip];
             Player.Play();

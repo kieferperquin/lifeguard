@@ -8,8 +8,19 @@ public class AnswerCheck : MonoBehaviour
 {
     [SerializeField] private Text debug;
     [SerializeField] private VideoPlayer videoPlayer;
-    public void CheckAnswer()
+
+    private VideoClipCycle function;
+
+    public void CheckAnswer(GameObject button)
     {
-        debug.text = gameObject.tag;
+        debug.text = button.tag;
+        if (button.CompareTag("Correct"))
+        {
+            function.NextClip();
+        }
+        else if (button.CompareTag("Wrong"))
+        {
+
+        }
     }
 }
