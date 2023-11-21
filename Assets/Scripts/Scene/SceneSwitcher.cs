@@ -15,13 +15,8 @@ public class SceneSwitcher : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-    public void game()
-    {
-        SceneManager.LoadScene(1);
-    }
-
     public void win()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
     }
 }

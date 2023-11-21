@@ -41,7 +41,7 @@ public class RaycastButtonPress : MonoBehaviour
         RaycastHit res;
         if (RayInteractor.TryGetCurrent3DRaycastHit(out res))
         {
-            //debug.text = res.collider.tag;
+            debug.text = res.collider.tag;
             if (res.transform.gameObject.layer == interactableUILayer)
             {
                 bool trigger = Input.GetAxis(buttonTrigger) >= sens;
