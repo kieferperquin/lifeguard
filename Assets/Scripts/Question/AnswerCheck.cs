@@ -12,6 +12,11 @@ public class AnswerCheck : MonoBehaviour
 
     private VideoClipCycle function;
 
+    private void Start()
+    {
+        function = videoPlayer.GetComponent<VideoClipCycle>();
+    }
+
     public void CheckAnswer(GameObject button)
     {
         debug.text = button.tag;
