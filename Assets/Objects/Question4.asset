@@ -18,4 +18,7 @@ MonoBehaviour:
   pointClick: 0
   correctAnswerList:
   - je comuniceerd met je collega's
-  wrongAnswerList: []
+  wrongAnswerList:
+  - fout 1
+  - fout 2
+  - fout 3

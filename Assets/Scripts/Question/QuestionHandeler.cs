@@ -122,9 +122,13 @@ public class QuestionHandeler : MonoBehaviour
 
     void SetAnswers(QuestionsSO currentQuestionData)
     {
-        if (currentQuestionData.allCorrect)// true
+        if (currentQuestionData.allCorrect || !currentQuestionData.pointClick)// true and false
         {
             AllCorrectAsnwers(currentQuestionData.correctAnswerList);
+        }
+        else if (!currentQuestionData.allCorrect || currentQuestionData.pointClick)//false and true
+        {
+
         }
         else
         {
