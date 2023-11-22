@@ -1,15 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 
 [CreateAssetMenu(menuName = "Questions")]
 public class QuestionsSO : ScriptableObject
 {
-    // set the question the correct answer and then multiple wrong answers
+    // everything a question needs
 
     public string question;
 
+    public VideoClip videoClip;
+
     public bool allCorrect;
+
+    public bool pointClick;
 
     public List<string> correctAnswerList = new List<string>();
 

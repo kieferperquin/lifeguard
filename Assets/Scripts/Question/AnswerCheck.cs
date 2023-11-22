@@ -8,13 +8,12 @@ using UnityEngine.Video;
 public class AnswerCheck : MonoBehaviour
 {
     [SerializeField] private Text debug;
-    [SerializeField] private VideoPlayer videoPlayer;
 
     private VideoClipCycle function;
 
     private void Start()
     {
-        function = videoPlayer.GetComponent<VideoClipCycle>();
+        function = gameObject.GetComponent<VideoClipCycle>();
     }
 
     public void CheckAnswer(GameObject button)

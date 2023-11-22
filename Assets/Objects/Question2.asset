@@ -10,25 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b438708ed8293b409270c88155fb890, type: 3}
-  m_Name: QuestionTest2
+  m_Name: Question2
   m_EditorClassIdentifier: 
-  question: what is 2 + 2
+  question: wat is de juiste manier van toezicht houden?
+  videoClip: {fileID: 0}
   allCorrect: 0
+  pointClick: 0
   correctAnswerList:
-  - 2 + 2 = 4
-  wrongAnswerList:
-  - 2 + 2 = 3
-  - 2 + 2 = 2
-  - 2 + 2 = 5
-  - 2 + 2 = 2
-  - 2 + 2 = 1
-  - 2 + 2 = 0
-  correctAnswers:
-  - 2 + 2 = 4
-  wrongAnswers:
-  - 2 + 2 = 3
-  - 2 + 2 = 2
-  - 2 + 2 = 5
-  - 2 + 2 = 2
-  - 2 + 2 = 1
-  - 2 + 2 = 0
+  - scannen en pas de 10-20 rege toe
+  wrongAnswerList: []

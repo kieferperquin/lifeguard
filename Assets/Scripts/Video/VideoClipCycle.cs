@@ -1,34 +1,28 @@
 using System;
-using System.Linq;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
 
 public class VideoClipCycle : MonoBehaviour
 {
-    [SerializeField] private VideoClip[] clips;
+    public List<QuestionsSO> questionsSOList = new List<QuestionsSO>();
+
+    private VideoClip videoClip;
+    
     private VideoPlayer Player;
 
     private int CurrClip = -1;
-    private int MaxClip;
     private void Start()
     {
-        Player = gameObject.GetComponent<VideoPlayer>();
-
-        if (clips.Length <= 0)
-        { 
-            clips = Resources.LoadAll("VideoClips", typeof(VideoClip)).Cast<VideoClip>().ToArray();
-        }
+        Player = gameObject.GetComponent<VideoPlayer>();        
     }
     public void NextClip()
     {
-        MaxClip = clips.Length;
-
         CurrClip++;
 
-        if (CurrClip <= MaxClip)
-        {
-            Player.clip = clips[CurrClip];
-            Player.Play();
-        }
+        videoClip = questionsSOList[CurrClip].videoClip;
+
+        Player.clip = videoClip;
+        Player.Play();
     }
 }
