@@ -32,8 +32,8 @@ public class QuestionHandeler : MonoBehaviour
     private bool isActivadedOnce = true;
     #endregion
 
-    private List<int> correctListAmount;
-    private List<int> wrongListAmount;
+    private List<int> correctListIndexes;
+    private List<int> wrongListIndexes;
 
     [SerializeField] private Text debug;
     void Start()
@@ -137,11 +137,11 @@ public class QuestionHandeler : MonoBehaviour
     }
     void AllCorrectAsnwers(List<string> correctAnswerList)
     {
-        correctListAmount = new List<int> { };
+        correctListIndexes = new List<int> { };
 
         for (int i = 0; i < correctAnswerList.Count; i++)
         {
-            correctListAmount.Add(i);
+            correctListIndexes.Add(i);
         }
 
         SetCorrectAnswer(answerText1, answerObject1, correctAnswerList);
@@ -154,17 +154,17 @@ public class QuestionHandeler : MonoBehaviour
     {
         int correctAnswer = Random.Range(1, 4);
 
-        correctListAmount = new List<int>();
-        wrongListAmount = new List<int>();
+        correctListIndexes = new List<int>();
+        wrongListIndexes = new List<int>();
 
         for (int i = 0; i < correctAnswerList.Count; i++)
         {
-            correctListAmount.Add(i);
+            correctListIndexes.Add(i);
         }
 
         for (int i = 0; i < wrongAnswerList.Count; i++)
         {
-            wrongListAmount.Add(i);
+            wrongListIndexes.Add(i);
         }
 
         if (correctAnswer == 1)
@@ -203,17 +203,17 @@ public class QuestionHandeler : MonoBehaviour
 
     void SetCorrectAnswer(Text answerText, GameObject answerObject, List<string> correctAnswerList)
     {
-        int randomCorrectAnswer = Random.Range(0, correctListAmount.Count);
-        answerText.text = correctAnswerList[correctListAmount[randomCorrectAnswer]];
-        correctListAmount.RemoveAt(randomCorrectAnswer);
+        int randomCorrectAnswer = Random.Range(0, correctListIndexes.Count);
+        answerText.text = correctAnswerList[correctListIndexes[randomCorrectAnswer]];
+        correctListIndexes.RemoveAt(randomCorrectAnswer);
         answerObject.tag = "Correct";
     }
 
     void SetWrongAnswer(Text answerText, GameObject answerObject, List<string> wrongAnswerList)
     {
-        int randomWrongAnswer = Random.Range(0, wrongListAmount.Count);
-        answerText.text = wrongAnswerList[wrongListAmount[randomWrongAnswer]];
-        wrongListAmount.RemoveAt(randomWrongAnswer);
+        int randomWrongAnswer = Random.Range(0, wrongListIndexes.Count);
+        answerText.text = wrongAnswerList[wrongListIndexes[randomWrongAnswer]];
+        wrongListIndexes.RemoveAt(randomWrongAnswer);
         answerObject.tag = "Wrong";
     }
 }
