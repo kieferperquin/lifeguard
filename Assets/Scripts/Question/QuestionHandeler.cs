@@ -167,13 +167,19 @@ public class QuestionHandeler : MonoBehaviour
             wrongListIndexes.Add(i);
         }
 
+        correctAnswer = 1;
+
         if (correctAnswer == 1)
         {
+            debug.text = "before set correct answer";
             SetCorrectAnswer(answerText1, answerObject1, correctAnswerList);
-
+            debug.text = "after set correct answer before set wrong answer 1";
             SetWrongAnswer(answerText2, answerObject2, wrongAnswerList);
+            debug.text = "after set wrong answer 1 before set wrong answer 2";
             SetWrongAnswer(answerText3, answerObject3, wrongAnswerList);
+            debug.text = "after set wrong answer 2 before set wrong answer 3";
             SetWrongAnswer(answerText4, answerObject4, wrongAnswerList);
+            debug.text = "after set wrong answer 3";
         }
         else if (correctAnswer == 2)
         {
@@ -211,9 +217,14 @@ public class QuestionHandeler : MonoBehaviour
 
     void SetWrongAnswer(Text answerText, GameObject answerObject, List<string> wrongAnswerList)
     {
+        debug.text = "before random int";
         int randomWrongAnswer = Random.Range(0, wrongListIndexes.Count);
+        debug.text = "before set text after random int";
         answerText.text = wrongAnswerList[wrongListIndexes[randomWrongAnswer]];
+        debug.text = "before remove index after set text";
         wrongListIndexes.RemoveAt(randomWrongAnswer);
+        debug.text = "before tag after remove index";
         answerObject.tag = "Wrong";
+        debug.text = "after tag";
     }
 }
