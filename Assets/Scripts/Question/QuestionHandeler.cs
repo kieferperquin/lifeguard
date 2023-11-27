@@ -102,7 +102,7 @@ public class QuestionHandeler : MonoBehaviour
 
         debug.text = "1";
         SetAnswers(questionsDataArray[currentData]);
-
+        debug.text = "22";
         currentData++;
     }
 
@@ -212,22 +212,27 @@ public class QuestionHandeler : MonoBehaviour
 
     void SetCorrectAnswer(Text answerText, GameObject answerObject, List<string> correctAnswerList)
     {
+        debug.text = "12";
         int randomCorrectAnswer = Random.Range(0, correctListIndexes.Count);
+        debug.text = "13";
         answerText.text = correctAnswerList[correctListIndexes[randomCorrectAnswer]];
+        debug.text = "14";
         correctListIndexes.RemoveAt(randomCorrectAnswer);
+        debug.text = "15";
         answerObject.tag = "Correct";
+        debug.text = "16";
     }
 
     void SetWrongAnswer(Text answerText, GameObject answerObject, List<string> wrongAnswerList)
     {
-        debug.text = "12";
+        debug.text = "17";
         int randomWrongAnswer = Random.Range(0, wrongListIndexes.Count);
-        debug.text = "13";
+        debug.text = "18";
         answerText.text = wrongAnswerList[wrongListIndexes[randomWrongAnswer]];
-        debug.text = "14";
+        debug.text = "19";
         wrongListIndexes.RemoveAt(randomWrongAnswer);
-        debug.text = "15";
+        debug.text = "20";
         answerObject.tag = "Wrong";
-        debug.text = "16";
+        debug.text = "21";
     }
 }
