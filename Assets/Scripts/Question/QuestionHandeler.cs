@@ -173,6 +173,7 @@ public class QuestionHandeler : MonoBehaviour
 
         if (correctAnswer == 1)
         {
+            RemoveText();
             SetCorrectAnswer(answerText1, answerObject1, correctAnswerList);
 
             SetWrongAnswer(answerText2, answerObject2, wrongAnswerList);
@@ -181,6 +182,7 @@ public class QuestionHandeler : MonoBehaviour
         }
         else if (correctAnswer == 2)
         {
+            RemoveText();
             debug.text = "7";
             SetCorrectAnswer(answerText2, answerObject2, correctAnswerList);
 
@@ -194,6 +196,7 @@ public class QuestionHandeler : MonoBehaviour
         }
         else if (correctAnswer == 3)
         {
+            RemoveText();
             SetCorrectAnswer(answerText3, answerObject3, correctAnswerList);
 
             SetWrongAnswer(answerText1, answerObject1, wrongAnswerList);
@@ -202,6 +205,7 @@ public class QuestionHandeler : MonoBehaviour
         }
         else if (correctAnswer == 4)
         {
+            RemoveText();
             SetCorrectAnswer(answerText4, answerObject4, correctAnswerList);
 
             SetWrongAnswer(answerText1, answerObject1, wrongAnswerList);
