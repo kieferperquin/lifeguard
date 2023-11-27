@@ -15,7 +15,7 @@ public class QuestionsSO : ScriptableObject
 
     public bool allCorrect;
 
-    public bool pointClick;
+    //public bool pointClick;
 
-    public VideoClip videoClip;
+    //public VideoClip videoClip;
 }
