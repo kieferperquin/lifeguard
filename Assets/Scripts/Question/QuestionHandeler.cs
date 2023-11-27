@@ -100,6 +100,7 @@ public class QuestionHandeler : MonoBehaviour
 
         SetQuestion(questionsDataArray[currentData]);
 
+        debug.text = "1";
         SetAnswers(questionsDataArray[currentData]);
 
         currentData++;
@@ -152,42 +153,44 @@ public class QuestionHandeler : MonoBehaviour
 
     void OneCorrectAnswer(List<string> wrongAnswerList, List<string> correctAnswerList)
     {
+        debug.text = "2";
         int correctAnswer = Random.Range(1, 4);
-
+        debug.text = "3";
         correctListIndexes = new List<int>();
         wrongListIndexes = new List<int>();
-
+        debug.text = "4";
         for (int i = 0; i < correctAnswerList.Count; i++)
         {
             correctListIndexes.Add(i);
         }
-
+        debug.text = "5";
         for (int i = 0; i < wrongAnswerList.Count; i++)
         {
             wrongListIndexes.Add(i);
         }
-
-        correctAnswer = 1;
+        debug.text = "6";
+        correctAnswer = 2;
 
         if (correctAnswer == 1)
         {
-            debug.text = "before set correct answer";
             SetCorrectAnswer(answerText1, answerObject1, correctAnswerList);
-            debug.text = "after set correct answer before set wrong answer 1";
+
             SetWrongAnswer(answerText2, answerObject2, wrongAnswerList);
-            debug.text = "after set wrong answer 1 before set wrong answer 2";
             SetWrongAnswer(answerText3, answerObject3, wrongAnswerList);
-            debug.text = "after set wrong answer 2 before set wrong answer 3";
             SetWrongAnswer(answerText4, answerObject4, wrongAnswerList);
-            debug.text = "after set wrong answer 3";
         }
         else if (correctAnswer == 2)
         {
+            debug.text = "7";
             SetCorrectAnswer(answerText2, answerObject2, correctAnswerList);
 
+            debug.text = "8";
             SetWrongAnswer(answerText1, answerObject1, wrongAnswerList);
+            debug.text = "9";
             SetWrongAnswer(answerText3, answerObject3, wrongAnswerList);
+            debug.text = "10";
             SetWrongAnswer(answerText4, answerObject4, wrongAnswerList);
+            debug.text = "11";
         }
         else if (correctAnswer == 3)
         {
@@ -217,14 +220,14 @@ public class QuestionHandeler : MonoBehaviour
 
     void SetWrongAnswer(Text answerText, GameObject answerObject, List<string> wrongAnswerList)
     {
-        debug.text = "before random int";
+        debug.text = "12";
         int randomWrongAnswer = Random.Range(0, wrongListIndexes.Count);
-        debug.text = "before set text after random int";
+        debug.text = "13";
         answerText.text = wrongAnswerList[wrongListIndexes[randomWrongAnswer]];
-        debug.text = "before remove index after set text";
+        debug.text = "14";
         wrongListIndexes.RemoveAt(randomWrongAnswer);
-        debug.text = "before tag after remove index";
+        debug.text = "15";
         answerObject.tag = "Wrong";
-        debug.text = "after tag";
+        debug.text = "16";
     }
 }
