@@ -20,7 +20,7 @@ public class VideoClipCycle : MonoBehaviour
     {
         CurrClip++;
 
-        videoClip = questionsSOList[CurrClip].videoClip;
+        //videoClip = questionsSOList[CurrClip].videoClip;
 
         Player.clip = videoClip;
         Player.Play();
