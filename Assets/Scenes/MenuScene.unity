@@ -3233,6 +3233,7 @@ GameObject:
   - component: {fileID: 952743513}
   - component: {fileID: 952743514}
   - component: {fileID: 952743515}
+  - component: {fileID: 952743516}
   m_Layer: 5
   m_Name: QuestionHandeler
   m_TagString: Untagged
@@ -3273,8 +3274,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9246af680829afa42af3e53e78c67bd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  answerButtonLeft: 13
-  answerButtonRight: 31
   questionsDataArray:
   - {fileID: 11400000, guid: 7db0bf36023dcd247b318750c137126a, type: 2}
   - {fileID: 11400000, guid: 489b788f0635c4445bd309a52ad65b5c, type: 2}
@@ -3291,8 +3290,7 @@ MonoBehaviour:
   answerObject2: {fileID: 1683243251}
   answerObject3: {fileID: 1030262281}
   answerObject4: {fileID: 151571293}
-  questionAnswerBoard: {fileID: 1538245171}
-  questionDisplayBoard: {fileID: 689158373}
+  function: {fileID: 952743516}
   debug: {fileID: 286966181}
 --- !u!114 &952743515
 MonoBehaviour:
@@ -3307,6 +3305,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debug: {fileID: 286966181}
+--- !u!114 &952743516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952743512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 960d214cf61af254185ac32ed21ab8b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  answerButtonLeft: 13
+  answerButtonRight: 31
+  questionAnswerBoard: {fileID: 1538245171}
+  questionDisplayBoard: {fileID: 689158373}
 --- !u!1 &962441605
 GameObject:
   m_ObjectHideFlags: 0
