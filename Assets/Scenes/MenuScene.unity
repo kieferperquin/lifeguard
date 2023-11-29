@@ -480,7 +480,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 022788991094c2f4fbc27833c16c0b41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questionsSOList: []
+  Player: {fileID: 76314438}
 --- !u!328 &76314438
 VideoPlayer:
   m_ObjectHideFlags: 0
@@ -3290,7 +3290,8 @@ MonoBehaviour:
   answerObject2: {fileID: 1683243251}
   answerObject3: {fileID: 1030262281}
   answerObject4: {fileID: 151571293}
-  function: {fileID: 952743516}
+  functionQuestionMenuHandeler: {fileID: 0}
+  functionVideoClipCycle: {fileID: 0}
   debug: {fileID: 286966181}
 --- !u!114 &952743515
 MonoBehaviour:
@@ -3305,6 +3306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debug: {fileID: 286966181}
+  function: {fileID: 952743514}
 --- !u!114 &952743516
 MonoBehaviour:
   m_ObjectHideFlags: 0

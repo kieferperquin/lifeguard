@@ -18,7 +18,8 @@ public class QuestionHandeler : MonoBehaviour
     private List<int> correctListAmount;
     private List<int> wrongListAmount;
 
-    [SerializeField] private QuestionMenuHandeler function;
+    [SerializeField] private QuestionMenuHandeler functionQuestionMenuHandeler;
+    [SerializeField] private VideoClipCycle functionVideoClipCycle;
 
     [SerializeField] private Text debug;
     void Start()
@@ -34,7 +35,7 @@ public class QuestionHandeler : MonoBehaviour
     }
     public void SetNextQuestion()
     {
-        function.SetDisplayVar(false); // ste display activated to false so when you answer the menu does not stay open
+        functionQuestionMenuHandeler.SetDisplayVar(false); // ste display activated to false so when you answer the menu does not stay open
 
         RemoveText(); // removes the text before setting it again (just to make sure it works)
 
@@ -43,6 +44,8 @@ public class QuestionHandeler : MonoBehaviour
         debug.text = "1";
         SetAnswers(questionsDataArray[currentData]); // sets the answers
         debug.text = "22";
+        functionVideoClipCycle.NextClip(questionsDataArray[currentData]);
+
         currentData++;
     }
 

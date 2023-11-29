@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 
 [CreateAssetMenu(menuName = "Questions")]
 public class QuestionsSO : ScriptableObject
@@ -17,4 +18,6 @@ public class QuestionsSO : ScriptableObject
     public List<string> wrongAnswerList = new List<string>();
 
     public List<GameObject> pointClickObjects = new List<GameObject>();
+
+    public VideoClip videoClip;
 }

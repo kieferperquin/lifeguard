@@ -5,24 +5,10 @@ using UnityEngine.Video;
 
 public class VideoClipCycle : MonoBehaviour
 {
-    public List<QuestionsSO> questionsSOList = new List<QuestionsSO>();
-
-    private VideoClip videoClip;
-    
-    private VideoPlayer Player;
-
-    private int CurrClip = -1;
-    private void Start()
+    [SerializeField] private VideoPlayer Player;
+    public void NextClip(QuestionsSO currentData)
     {
-        Player = gameObject.GetComponent<VideoPlayer>();        
-    }
-    public void NextClip()
-    {
-        CurrClip++;
-
-        //videoClip = questionsSOList[CurrClip].videoClip;
-
-        Player.clip = videoClip;
+        Player.clip = currentData.videoClip;
         Player.Play();
     }
 }
