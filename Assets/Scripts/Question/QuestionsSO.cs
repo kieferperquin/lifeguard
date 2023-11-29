@@ -15,4 +15,6 @@ public class QuestionsSO : ScriptableObject
     public List<string> correctAnswerList = new List<string>();
 
     public List<string> wrongAnswerList = new List<string>();
+
+    public List<GameObject> pointClickObjects = new List<GameObject>();
 }

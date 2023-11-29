@@ -129,7 +129,7 @@ public class QuestionHandeler : MonoBehaviour
         }
         else if (!currentQuestionData.allCorrect && currentQuestionData.pointClick)//false and true
         {
-
+            PointAndClick(currentQuestionData.pointClickObjects);
         }
         else
         {
@@ -238,5 +238,13 @@ public class QuestionHandeler : MonoBehaviour
         debug.text = "20";
         answerObject.tag = "Wrong";
         debug.text = "21";
+    }
+
+    void PointAndClick(List<GameObject> pointClickObjects)
+    {
+        for (int i = 0; i < pointClickObjects.Count; i++)
+        {
+            pointClickObjects[i].SetActive(true);
+        }
     }
 }
