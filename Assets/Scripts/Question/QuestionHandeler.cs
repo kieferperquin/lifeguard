@@ -41,10 +41,9 @@ public class QuestionHandeler : MonoBehaviour
 
         SetQuestion(questionsDataArray[currentData]); // sets the question text
 
-        debug.text = "1";
         SetAnswers(questionsDataArray[currentData]); // sets the answers
-        debug.text = "22";
-        functionVideoClipCycle.NextClip(questionsDataArray[currentData]);
+
+        functionVideoClipCycle.SetClip(questionsDataArray[currentData]);
 
         currentData++;
     }
@@ -98,22 +97,17 @@ public class QuestionHandeler : MonoBehaviour
 
     void OneCorrectAnswer(List<string> wrongAnswerList, List<string> correctAnswerList)
     {
-        debug.text = "2";
         int correctAnswer = Random.Range(1, 4); // makes a random between 1 and 4
-        debug.text = "3";
         correctListAmount = new List<int>(); // makes 2 lists
         wrongListAmount = new List<int>();
-        debug.text = "4";
         for (int i = 0; i < correctAnswerList.Count; i++) // puts all the indexes from correctAnswerList into the list
         {
             correctListAmount.Add(i);
         }
-        debug.text = "5";
         for (int i = 0; i < wrongAnswerList.Count; i++) // puts all the indexes from wrongAnswerList into the list
         {
             wrongListAmount.Add(i);
         }
-        debug.text = "6";
         correctAnswer = 2;
 
         if (correctAnswer == 1) // if the random is 1
@@ -129,17 +123,12 @@ public class QuestionHandeler : MonoBehaviour
         else if (correctAnswer == 2) // if the random is 2
         {
             RemoveText(); // removes the text
-            debug.text = "7";
             SetCorrectAnswer(answerText2, answerObject2, correctAnswerList);// sets the correct answer
 
-            debug.text = "8";
             // sets 3 wrong answers
             SetWrongAnswer(answerText1, answerObject1, wrongAnswerList);
-            debug.text = "9";
             SetWrongAnswer(answerText3, answerObject3, wrongAnswerList);
-            debug.text = "10";
             SetWrongAnswer(answerText4, answerObject4, wrongAnswerList);
-            debug.text = "11";
         }
         else if (correctAnswer == 3) // if the random is 3
         {
@@ -165,28 +154,18 @@ public class QuestionHandeler : MonoBehaviour
 
     void SetCorrectAnswer(Text answerText, GameObject answerObject, List<string> correctAnswerList)
     {
-        debug.text = "12";
         int randomCorrectAnswer = Random.Range(0, correctListAmount.Count); // makes a random
-        debug.text = "13";
-        answerText.text = correctAnswerList[correctListAmount[randomCorrectAnswer]]; // answertext.text = all correct answer[all of the indexes [ random answer]] 
-        debug.text = "14";
+        answerText.text = correctAnswerList[correctListAmount[randomCorrectAnswer]]; // answertext.text = all correct answer[all of the indexes [ random answer]]
         correctListAmount.RemoveAt(randomCorrectAnswer); // removes the index that i used to set the answer so i dont use it again
-        debug.text = "15";
         answerObject.tag = "Correct"; // set the tag of the object
-        debug.text = "16";
     }
 
     void SetWrongAnswer(Text answerText, GameObject answerObject, List<string> wrongAnswerList)
     {
-        debug.text = "17";
         int randomWrongAnswer = Random.Range(0, wrongListAmount.Count);
-        debug.text = "18";
         answerText.text = wrongAnswerList[wrongListAmount[randomWrongAnswer]]; // answertext.text = all wrong answer[all of the indexes [ random answer]]
-        debug.text = "19";
         wrongListAmount.RemoveAt(randomWrongAnswer); // removes the index that i used to set the answer so i dont use it again
-        debug.text = "20";
         answerObject.tag = "Wrong"; // set the tag of the object
-        debug.text = "21";
     }
 
     void PointAndClick(List<GameObject> pointClickObjects)

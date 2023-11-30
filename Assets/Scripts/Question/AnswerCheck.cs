@@ -9,14 +9,16 @@ public class AnswerCheck : MonoBehaviour
 {
     [SerializeField] private Text debug;
 
-    [SerializeField] private QuestionHandeler function;
+    [SerializeField] private QuestionHandeler functionQuestionHandeler;
+    [SerializeField] private VideoClipCycle functionVideoClipCycle;
 
     public void CheckAnswer(GameObject button)
     {
         debug.text = button.tag;
         if (button.CompareTag("Correct"))
         {
-            function.SetNextQuestion();
+            functionQuestionHandeler.SetNextQuestion();
+            functionVideoClipCycle.PlayClip();
         }
         else if (button.CompareTag("Wrong")) // if wrong button is clicked start again for now but there should pop up a menu that will explain why it is wrong
         {
