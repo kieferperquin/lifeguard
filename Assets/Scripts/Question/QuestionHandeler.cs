@@ -37,7 +37,7 @@ public class QuestionHandeler : MonoBehaviour
     {
         functionQuestionMenuHandeler.SetDisplayVar(false); // ste display activated to false so when you answer the menu does not stay open
 
-        RemoveText(); // removes the text before setting it again (just to make sure it works)
+        RemoveTextAndTags(); // removes the text before setting it again (just to make sure it works)
 
         SetQuestion(questionsDataArray[currentData]); // sets the question text
 
@@ -48,8 +48,14 @@ public class QuestionHandeler : MonoBehaviour
         currentData++;
     }
 
-    void RemoveText()
+    void RemoveTextAndTags()
     {
+        //set the tag to untagged
+        answerObject1.tag = "Untagged";
+        answerObject2.tag = "Untagged";
+        answerObject3.tag = "Untagged";
+        answerObject4.tag = "Untagged";
+
         // removes the text before setting it again (just to make sure it works)
         answerText1.text = "";
         answerText2.text = "";
@@ -112,7 +118,7 @@ public class QuestionHandeler : MonoBehaviour
 
         if (correctAnswer == 1) // if the random is 1
         {
-            RemoveText(); // removes the text
+            RemoveTextAndTags(); // removes the text
             SetCorrectAnswer(answerText1, answerObject1, correctAnswerList); // sets the correct answer
 
             // sets 3 wrong answers
@@ -122,7 +128,7 @@ public class QuestionHandeler : MonoBehaviour
         }
         else if (correctAnswer == 2) // if the random is 2
         {
-            RemoveText(); // removes the text
+            RemoveTextAndTags(); // removes the text
             SetCorrectAnswer(answerText2, answerObject2, correctAnswerList);// sets the correct answer
 
             // sets 3 wrong answers
@@ -132,7 +138,7 @@ public class QuestionHandeler : MonoBehaviour
         }
         else if (correctAnswer == 3) // if the random is 3
         {
-            RemoveText(); // removes the text
+            RemoveTextAndTags(); // removes the text
             SetCorrectAnswer(answerText3, answerObject3, correctAnswerList);// sets the correct answer
 
             // sets 3 wrong answers
@@ -142,7 +148,7 @@ public class QuestionHandeler : MonoBehaviour
         }
         else if (correctAnswer == 4) // if the random is 4
         {
-            RemoveText(); // removes the text
+            RemoveTextAndTags(); // removes the text
             SetCorrectAnswer(answerText4, answerObject4, correctAnswerList);// sets the correct answer
 
             // sets 3 wrong answers
