@@ -15,6 +15,8 @@ public class QuestionMenuHandeler : MonoBehaviour
 
     [SerializeField] private GameObject questionAnswerBoard;
     [SerializeField] private GameObject questionDisplayBoard;
+
+    [SerializeField] private VideoPauze function;
     void Start()
     {
         // set the trigger to string
@@ -55,11 +57,15 @@ public class QuestionMenuHandeler : MonoBehaviour
         // opens the menu so the player can answer the questions
         if (displayActivated)//true
         {
+            function.changePaused(true);
+
             questionAnswerBoard.SetActive(true);
             questionDisplayBoard.SetActive(false);
         }
         else
         {
+            function.changePaused(false);
+
             questionAnswerBoard.SetActive(false);
             questionDisplayBoard.SetActive(true);
         }

@@ -12,13 +12,15 @@ public class VideoPauze : MonoBehaviour
     [SerializeField] private VideoPlayer videoPlayer;
 
     private bool isPaused;
+    private bool isActivatedOnce;
 
-    string buttonTrigger;
+    private string buttonTriggerL;
+    private string buttonTriggerR;
 
     private void Start()
     {
-        buttonTrigger = buttonLeft.ToString();
-        buttonTrigger = buttonRight.ToString();
+        buttonTriggerL = buttonLeft.ToString();
+        buttonTriggerR = buttonRight.ToString();
     }
     private void Update()
     {
@@ -27,6 +29,7 @@ public class VideoPauze : MonoBehaviour
         if (isPaused)//true
         {
             videoPlayer.Pause();
+            // add score
         }
         else
         {
@@ -36,22 +39,25 @@ public class VideoPauze : MonoBehaviour
 
     void buttonPressed()
     {
-        bool trigger = Input.GetButton(buttonTrigger);
-        if (!trigger)//false
+        bool triggerL = Input.GetButton(buttonTriggerL);
+        bool triggerR = Input.GetButton(buttonTriggerR);
+        if ((triggerL || triggerR) && isActivatedOnce)//true and true
         {
-            trigger = Input.GetButton(buttonTrigger);
-            if (!trigger)//false
-            {
-                isPaused = false;
-            }
-            else
-            {
-                isPaused = true;
-            }
+            isActivatedOnce = false;
+            isPaused = !isPaused;
+        }
+        else if ((triggerL || triggerR) && !isActivatedOnce)// true and false
+        {
+            // do nothing just make sure it only fires once
         }
         else
         {
-            isPaused = true;
+            isActivatedOnce = true;
         }
+    }
+
+    public void changePaused(bool newPausedState)
+    {
+        isPaused = newPausedState;
     }
 }

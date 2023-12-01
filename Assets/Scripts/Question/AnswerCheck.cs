@@ -14,7 +14,6 @@ public class AnswerCheck : MonoBehaviour
 
     public void CheckAnswer(GameObject button)
     {
-        debug.text = button.tag;
         if (button.CompareTag("Correct"))
         {
             functionQuestionHandeler.SetNextQuestion();

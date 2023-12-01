@@ -3336,6 +3336,7 @@ MonoBehaviour:
   answerButtonRight: 31
   questionAnswerBoard: {fileID: 1538245171}
   questionDisplayBoard: {fileID: 689158373}
+  function: {fileID: 335463967}
 --- !u!1 &962441605
 GameObject:
   m_ObjectHideFlags: 0
