@@ -24,27 +24,19 @@ public class VideoPauze : MonoBehaviour
     }
     private void Update()
     {
-        buttonPressed();
-
-        if (isPaused)//true
-        {
-            videoPlayer.Pause();
-            // add score
-        }
-        else
-        {
-            videoPlayer.Play();
-        }
+        ButtonPressed();
     }
 
-    void buttonPressed()
+    void ButtonPressed()
     {
         bool triggerL = Input.GetButton(buttonTriggerL);
         bool triggerR = Input.GetButton(buttonTriggerR);
+
         if ((triggerL || triggerR) && isActivatedOnce)//true and true
         {
             isActivatedOnce = false;
             isPaused = !isPaused;
+            ChangePaused();
         }
         else if ((triggerL || triggerR) && !isActivatedOnce)// true and false
         {
@@ -56,8 +48,22 @@ public class VideoPauze : MonoBehaviour
         }
     }
 
-    public void changePaused(bool newPausedState)
+    public void ChangePausedBool(bool newPausedState)
     {
         isPaused = newPausedState;
+        ChangePaused();
+    }
+
+    void ChangePaused()
+    {
+        if (isPaused)//true
+        {
+            videoPlayer.Pause();
+            // add score
+        }
+        else
+        {
+            videoPlayer.Play();
+        }
     }
 }

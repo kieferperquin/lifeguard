@@ -27,8 +27,6 @@ public class QuestionMenuHandeler : MonoBehaviour
     void Update()
     {
         CheckButtonPress();
-
-        SetDisplayActive();
     }
 
     void CheckButtonPress()
@@ -41,6 +39,8 @@ public class QuestionMenuHandeler : MonoBehaviour
         {
             isActivadedOnce = false;
             displayActivated = !displayActivated;
+
+            SetDisplayActive();
         }
         else if ((triggerLeft || triggerRight) && !isActivadedOnce)
         {
@@ -57,14 +57,14 @@ public class QuestionMenuHandeler : MonoBehaviour
         // opens the menu so the player can answer the questions
         if (displayActivated)//true
         {
-            function.changePaused(true);
+            function.ChangePausedBool(true);
 
             questionAnswerBoard.SetActive(true);
             questionDisplayBoard.SetActive(false);
         }
         else
         {
-            function.changePaused(false);
+            function.ChangePausedBool(false);
 
             questionAnswerBoard.SetActive(false);
             questionDisplayBoard.SetActive(true);
