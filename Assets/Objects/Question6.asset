@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: Question6
   m_EditorClassIdentifier: 
   question: hoe handel je?
-  videoClip: {fileID: 0}
   allCorrect: 0
   pointClick: 0
   correctAnswerList:
@@ -22,3 +21,5 @@ MonoBehaviour:
   - fout 1
   - fout 2
   - fout 3
+  pointClickObjects: []
+  videoClip: {fileID: 32900000, guid: c18e96a672466e54abacc66e29c0fd8e, type: 3}

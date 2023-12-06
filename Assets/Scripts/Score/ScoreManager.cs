@@ -1,18 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private float timeInMenu = 0;
 
-    // Update is called once per frame
+    private bool isInMenu = false;
+
+    [SerializeField] private Text debug;
     void Update()
     {
-        
+        if (isInMenu)
+        {
+            timeInMenu += Time.deltaTime;
+        }
+
+        //debug.text = timeInMenu.ToString();
+    }
+
+    public void ChangeIsInMenuBool(bool newBool)
+    {
+        isInMenu = newBool;
     }
 }

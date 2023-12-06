@@ -57,22 +57,24 @@ public class QuestionMenuHandeler : MonoBehaviour
         // opens the menu so the player can answer the questions
         if (displayActivated)//true
         {
-            function.ChangePausedBool(true);
-
             questionAnswerBoard.SetActive(true);
             questionDisplayBoard.SetActive(false);
+
+            function.ChangePausedBool(true);
         }
         else
         {
-            function.ChangePausedBool(false);
 
             questionAnswerBoard.SetActive(false);
             questionDisplayBoard.SetActive(true);
+
+            function.ChangePausedBool(false);
         }
     }
 
     public void SetDisplayVar(bool newDisplayActive)
     {
         displayActivated = newDisplayActive;
+        SetDisplayActive();
     }
 }

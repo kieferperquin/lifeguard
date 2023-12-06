@@ -10,9 +10,11 @@ public class VideoPauze : MonoBehaviour
     public TriggersListObject.Triggers buttonRight;
 
     [SerializeField] private VideoPlayer videoPlayer;
+    [SerializeField] private ScoreManager function;
 
     private bool isPaused;
     private bool isActivatedOnce;
+    private bool canPlay = true;
 
     private string buttonTriggerL;
     private string buttonTriggerR;
@@ -25,6 +27,11 @@ public class VideoPauze : MonoBehaviour
     private void Update()
     {
         ButtonPressed();
+
+        if (videoPlayer.length == videoPlayer.time)
+        {
+            canPlay = false;
+        }
     }
 
     void ButtonPressed()
@@ -59,11 +66,22 @@ public class VideoPauze : MonoBehaviour
         if (isPaused)//true
         {
             videoPlayer.Pause();
-            // add score
+
+            function.ChangeIsInMenuBool(true); //score now gets added
         }
         else
         {
-            videoPlayer.Play();
+            if (canPlay)
+            {
+                videoPlayer.Play();
+                function.ChangeIsInMenuBool(false); //score now stops getting added
+            }
         }
+    }
+    public void SetCanPlay(bool newCanPlay)
+    {
+        canPlay = newCanPlay;
+        videoPlayer.Play();
+        videoPlayer.Pause();
     }
 }

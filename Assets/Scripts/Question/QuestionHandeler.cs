@@ -20,6 +20,7 @@ public class QuestionHandeler : MonoBehaviour
 
     [SerializeField] private QuestionMenuHandeler functionQuestionMenuHandeler;
     [SerializeField] private VideoClipCycle functionVideoClipCycle;
+    [SerializeField] private VideoPauze functionVideoPauze;
 
     [SerializeField] private Text debug;
     void Start()
@@ -35,7 +36,11 @@ public class QuestionHandeler : MonoBehaviour
     }
     public void SetNextQuestion()
     {
-        functionQuestionMenuHandeler.SetDisplayVar(false); // ste display activated to false so when you answer the menu does not stay open
+        functionVideoPauze.SetCanPlay(true); //sets canPlay to true so the video starts
+
+        functionVideoClipCycle.SetClip(questionsDataArray[currentData]);
+
+        functionQuestionMenuHandeler.SetDisplayVar(false); // set display activated to false so when you answer the menu does not stay open
 
         RemoveTextAndTags(); // removes the text before setting it again (just to make sure it works)
 
@@ -43,18 +48,16 @@ public class QuestionHandeler : MonoBehaviour
 
         SetAnswers(questionsDataArray[currentData]); // sets the answers
 
-        functionVideoClipCycle.SetClip(questionsDataArray[currentData]);
-
         currentData++;
     }
 
     void RemoveTextAndTags()
-    {
-        //set the tag to untagged
+    {/*
+        //set the tag to untagged 
         answerObject1.tag = "Untagged";
         answerObject2.tag = "Untagged";
         answerObject3.tag = "Untagged";
-        answerObject4.tag = "Untagged";
+        answerObject4.tag = "Untagged";*/
 
         // removes the text before setting it again (just to make sure it works)
         answerText1.text = "";
@@ -114,7 +117,6 @@ public class QuestionHandeler : MonoBehaviour
         {
             wrongListAmount.Add(i);
         }
-        correctAnswer = 2;
 
         if (correctAnswer == 1) // if the random is 1
         {

@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: Question1
   m_EditorClassIdentifier: 
   question: Wat is de ideale positie om plaats te nemen in het zwembad?
-  videoClip: {fileID: 0}
   allCorrect: 0
   pointClick: 0
   correctAnswerList:
@@ -22,3 +21,5 @@ MonoBehaviour:
   - bij je collega
   - in het water
   - ' fout 3'
+  pointClickObjects: []
+  videoClip: {fileID: 32900000, guid: c4d12ab2f5dadb6488243d0a87140814, type: 3}

@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: Question3
   m_EditorClassIdentifier: 
   question: er is een ongeluk gebeurd wijs waar aan waar het is gebeurd.
-  videoClip: {fileID: 0}
   allCorrect: 0
   pointClick: 1
   correctAnswerList: []
   wrongAnswerList: []
+  pointClickObjects: []
+  videoClip: {fileID: 32900000, guid: 41197391c1274eb44ba4ae73b4681441, type: 3}
