@@ -4,22 +4,33 @@ using UnityEngine;
 
 public class MenuToVideoSwitch : MonoBehaviour
 {
-    [SerializeField] private GameObject MenuSceneStuff;
+    [SerializeField] private GameObject menuSceneStuff;
 
-    [SerializeField] private GameObject VideoSceneStuff;
-    [SerializeField] private GameObject QuestionDisplayBoard;
-    [SerializeField] private GameObject QuestionAnswerBoard;
+    [SerializeField] private GameObject videoSceneStuff;
+    [SerializeField] private GameObject questionDisplayBoard;
+    [SerializeField] private GameObject questionAnswerBoard;
 
+    [SerializeField] private GameObject winScreen;
+
+    [SerializeField] private ScoreManager score;
     private void Start()
     {
-        VideoSceneStuff.SetActive(false);
-        MenuSceneStuff.SetActive(true);
-        QuestionDisplayBoard.SetActive(true);
-        QuestionAnswerBoard.SetActive(false);
+        videoSceneStuff.SetActive(false);
+        menuSceneStuff.SetActive(true);
+        questionDisplayBoard.SetActive(true);
+        questionAnswerBoard.SetActive(false);
+        winScreen.SetActive(false);
     }
     public void Switch()
     {
-        VideoSceneStuff.SetActive(true);
-        MenuSceneStuff.SetActive(false);
+        videoSceneStuff.SetActive(true);
+        menuSceneStuff.SetActive(false);
+    }
+
+    public void Win()
+    {
+        score.PausedVideo(false);
+        winScreen.SetActive(true);
+        videoSceneStuff.SetActive(false);
     }
 }

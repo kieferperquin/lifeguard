@@ -10,7 +10,9 @@ public class VideoPauze : MonoBehaviour
     public TriggersListObject.Triggers buttonRight;
 
     [SerializeField] private VideoPlayer videoPlayer;
-    [SerializeField] private ScoreManager function;
+
+    [SerializeField] private ScoreManager functionScoreManager;
+    [SerializeField] private QuestionMenuHandeler functionQuestionMenuHandeler;
 
     private bool isPaused;
     private bool isActivatedOnce;
@@ -29,7 +31,11 @@ public class VideoPauze : MonoBehaviour
     {
         ButtonPressed();
 
-        debug.text = "videoplayer.time = " + videoPlayer.time + "   ,  videoplayer.length = " + videoPlayer.length;
+        if (videoPlayer.time !>= videoPlayer.length - .5)
+        {
+            functionQuestionMenuHandeler.SetDisplayVar(true);
+            functionScoreManager.ChangeIsAnswering(true);
+        }
     }
 
     void ButtonPressed()
@@ -65,14 +71,14 @@ public class VideoPauze : MonoBehaviour
         {
             videoPlayer.Pause();
 
-            function.ChangeIsInMenuBool(true); //score now gets added
+            functionScoreManager.PausedVideo(true); //score now gets added
         }
         else
         {
-            if (videoPlayer.time !>= videoPlayer.length - 1)
+            if (videoPlayer.time <= videoPlayer.length - 1)
             {
                 videoPlayer.Play();
-                function.ChangeIsInMenuBool(false); //score now stops getting added
+                functionScoreManager.PausedVideo(false); //score now stops getting added
             }
         }
     }

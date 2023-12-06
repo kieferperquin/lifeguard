@@ -21,6 +21,9 @@ public class QuestionHandeler : MonoBehaviour
     [SerializeField] private QuestionMenuHandeler functionQuestionMenuHandeler;
     [SerializeField] private VideoClipCycle functionVideoClipCycle;
     [SerializeField] private VideoPauze functionVideoPauze;
+    [SerializeField] private MenuToVideoSwitch functionMenuToVideoSwitch;
+
+    [SerializeField] private LayerMask interactable;
 
     [SerializeField] private Text debug;
     void Start()
@@ -31,16 +34,23 @@ public class QuestionHandeler : MonoBehaviour
         answerText3 = answerObject3.GetComponentInChildren<Text>();
         answerText4 = answerObject4.GetComponentInChildren<Text>();
 
+        //RemoveAllAddLayer(); // removes the text before setting it again (just to make sure it works)
+
         // run once so in the start you have a question
         SetNextQuestion();
     }
     public void SetNextQuestion()
     {
+        setAnswerObjectsActive(true);
+
+        if (currentData >= questionsDataArray.Length)
+        {
+            functionMenuToVideoSwitch.Win();
+        }
+
         functionVideoClipCycle.SetClip(questionsDataArray[currentData]);
 
         functionQuestionMenuHandeler.SetDisplayVar(false); // set display activated to false so when you answer the menu does not stay open
-
-        RemoveTextAndTags(); // removes the text before setting it again (just to make sure it works)
 
         SetQuestion(questionsDataArray[currentData]); // sets the question text
 
@@ -49,19 +59,22 @@ public class QuestionHandeler : MonoBehaviour
         currentData++;
     }
 
-    void RemoveTextAndTags()
-    {/*
-        //set the tag to untagged 
-        answerObject1.tag = "Untagged";
-        answerObject2.tag = "Untagged";
-        answerObject3.tag = "Untagged";
-        answerObject4.tag = "Untagged";*/
+    void SetTextTagAndLayer(string tagToSet, string textToSet)
+    {
+        answerObject1.tag = tagToSet;
+        answerObject2.tag = tagToSet;
+        answerObject3.tag = tagToSet;
+        answerObject4.tag = tagToSet;
 
-        // removes the text before setting it again (just to make sure it works)
-        answerText1.text = "";
-        answerText2.text = "";
-        answerText3.text = "";
-        answerText4.text = "";
+        answerText1.text = textToSet;
+        answerText2.text = textToSet;
+        answerText3.text = textToSet;
+        answerText4.text = textToSet;
+
+        answerObject1.layer = interactable;
+        answerObject2.layer = interactable;
+        answerObject3.layer = interactable;
+        answerObject4.layer = interactable;
     }
 
     void SetQuestion(QuestionsSO currentQuestionData)
@@ -86,6 +99,15 @@ public class QuestionHandeler : MonoBehaviour
             OneCorrectAnswer(currentQuestionData.wrongAnswerList, currentQuestionData.correctAnswerList);// sets 1 correct answer and 3 wrong answers
         }
     }
+
+    void setAnswerObjectsActive(bool active)
+    {
+        answerObject1.SetActive(active);
+        answerObject2.SetActive(active);
+        answerObject3.SetActive(active);
+        answerObject4.SetActive(active);
+    }
+
     void AllCorrectAsnwers(List<string> correctAnswerList)
     {
         correctListAmount = new List<int> { }; // makes list
@@ -94,7 +116,7 @@ public class QuestionHandeler : MonoBehaviour
         {
             correctListAmount.Add(i);
         }
-
+        SetTextTagAndLayer("Correct", "Correct");
         // sets the 4 correct answers
         SetCorrectAnswer(answerText1, answerObject1, correctAnswerList);
         SetCorrectAnswer(answerText2, answerObject2, correctAnswerList);
@@ -116,9 +138,10 @@ public class QuestionHandeler : MonoBehaviour
             wrongListAmount.Add(i);
         }
 
+        SetTextTagAndLayer("Untagged", "");
+
         if (correctAnswer == 1) // if the random is 1
         {
-            RemoveTextAndTags(); // removes the text
             SetCorrectAnswer(answerText1, answerObject1, correctAnswerList); // sets the correct answer
 
             // sets 3 wrong answers
@@ -128,7 +151,6 @@ public class QuestionHandeler : MonoBehaviour
         }
         else if (correctAnswer == 2) // if the random is 2
         {
-            RemoveTextAndTags(); // removes the text
             SetCorrectAnswer(answerText2, answerObject2, correctAnswerList);// sets the correct answer
 
             // sets 3 wrong answers
@@ -138,7 +160,6 @@ public class QuestionHandeler : MonoBehaviour
         }
         else if (correctAnswer == 3) // if the random is 3
         {
-            RemoveTextAndTags(); // removes the text
             SetCorrectAnswer(answerText3, answerObject3, correctAnswerList);// sets the correct answer
 
             // sets 3 wrong answers
@@ -148,7 +169,6 @@ public class QuestionHandeler : MonoBehaviour
         }
         else if (correctAnswer == 4) // if the random is 4
         {
-            RemoveTextAndTags(); // removes the text
             SetCorrectAnswer(answerText4, answerObject4, correctAnswerList);// sets the correct answer
 
             // sets 3 wrong answers
@@ -168,17 +188,18 @@ public class QuestionHandeler : MonoBehaviour
 
     void SetWrongAnswer(Text answerText, GameObject answerObject, List<string> wrongAnswerList)
     {
-        int randomWrongAnswer = Random.Range(0, wrongListAmount.Count);
+        int randomWrongAnswer = Random.Range(0, wrongListAmount.Count); // makes a random
         answerText.text = wrongAnswerList[wrongListAmount[randomWrongAnswer]]; // answertext.text = all wrong answer[all of the indexes [ random answer]]
         wrongListAmount.RemoveAt(randomWrongAnswer); // removes the index that i used to set the answer so i dont use it again
         answerObject.tag = "Wrong"; // set the tag of the object
     }
 
-    void PointAndClick(List<GameObject> pointClickObjects)
+    void PointAndClick(GameObject pointClickObject)
     {
-        for (int i = 0; i < pointClickObjects.Count; i++) // gets all the pointclick objects and sets them to true
-        {
-            pointClickObjects[i].SetActive(true);
-        }
+        SetTextTagAndLayer("Correct", "Correct");
+
+        //setAnswerObjectsActive(false);
+
+        //Instantiate(pointClickObject, new Vector3(0, 0, 0), Quaternion.identity);
     }
 }

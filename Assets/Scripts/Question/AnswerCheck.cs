@@ -11,11 +11,13 @@ public class AnswerCheck : MonoBehaviour
 
     [SerializeField] private QuestionHandeler functionQuestionHandeler;
     [SerializeField] private VideoClipCycle functionVideoClipCycle;
+    [SerializeField] private ScoreManager functionScoreManager;
 
     public void CheckAnswer(GameObject button)
     {
         if (button.CompareTag("Correct"))
         {
+            functionScoreManager.ChangeIsAnswering(false);
             functionQuestionHandeler.SetNextQuestion();
             functionVideoClipCycle.PlayClip();
         }

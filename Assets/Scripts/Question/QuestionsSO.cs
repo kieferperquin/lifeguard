@@ -17,7 +17,7 @@ public class QuestionsSO : ScriptableObject
 
     public List<string> wrongAnswerList = new List<string>();
 
-    public List<GameObject> pointClickObjects = new List<GameObject>();
+    public GameObject pointClickObjects;
 
     public VideoClip videoClip;
 }
