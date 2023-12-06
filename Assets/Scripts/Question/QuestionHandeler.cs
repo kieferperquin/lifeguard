@@ -36,8 +36,6 @@ public class QuestionHandeler : MonoBehaviour
     }
     public void SetNextQuestion()
     {
-        functionVideoPauze.SetCanPlay(true); //sets canPlay to true so the video starts
-
         functionVideoClipCycle.SetClip(questionsDataArray[currentData]);
 
         functionQuestionMenuHandeler.SetDisplayVar(false); // set display activated to false so when you answer the menu does not stay open

@@ -14,10 +14,11 @@ public class VideoPauze : MonoBehaviour
 
     private bool isPaused;
     private bool isActivatedOnce;
-    private bool canPlay = true;
 
     private string buttonTriggerL;
     private string buttonTriggerR;
+
+    [SerializeField] private Text debug;
 
     private void Start()
     {
@@ -28,10 +29,7 @@ public class VideoPauze : MonoBehaviour
     {
         ButtonPressed();
 
-        if (videoPlayer.length == videoPlayer.time)
-        {
-            canPlay = false;
-        }
+        debug.text = "videoplayer.time = " + videoPlayer.time + "   ,  videoplayer.length = " + videoPlayer.length;
     }
 
     void ButtonPressed()
@@ -71,17 +69,11 @@ public class VideoPauze : MonoBehaviour
         }
         else
         {
-            if (canPlay)
+            if (videoPlayer.time !>= videoPlayer.length - 1)
             {
                 videoPlayer.Play();
                 function.ChangeIsInMenuBool(false); //score now stops getting added
             }
         }
-    }
-    public void SetCanPlay(bool newCanPlay)
-    {
-        canPlay = newCanPlay;
-        videoPlayer.Play();
-        videoPlayer.Pause();
     }
 }
