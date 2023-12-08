@@ -16,6 +16,8 @@ public class QuestionMenuHandeler : MonoBehaviour
     [SerializeField] private GameObject questionAnswerBoard;
     [SerializeField] private GameObject questionDisplayBoard;
 
+    [SerializeField] private GameObject pointClickQuestion;
+
     [SerializeField] private VideoPauze function;
     void Start()
     {
@@ -60,13 +62,22 @@ public class QuestionMenuHandeler : MonoBehaviour
             questionAnswerBoard.SetActive(true);
             questionDisplayBoard.SetActive(false);
 
+            if (pointClickQuestion != null)
+            {
+                pointClickQuestion.SetActive(true);
+            }
+
             function.ChangePausedBool(true);
         }
         else
         {
-
             questionAnswerBoard.SetActive(false);
             questionDisplayBoard.SetActive(true);
+
+            if (pointClickQuestion != null)
+            {
+                pointClickQuestion.SetActive(false);
+            }
 
             function.ChangePausedBool(false);
         }
@@ -76,5 +87,10 @@ public class QuestionMenuHandeler : MonoBehaviour
     {
         displayActivated = newDisplayActive;
         SetDisplayActive();
+    }
+
+    public void SetPointClickQuestionGameObject(GameObject pointClickObject)
+    {
+        pointClickQuestion = pointClickObject;
     }
 }

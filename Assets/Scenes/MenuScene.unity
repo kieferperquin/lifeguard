@@ -433,7 +433,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1766984395}
-  - {fileID: 76314436}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &42092479
@@ -546,7 +545,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 35445954}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &76314437
 MonoBehaviour:
@@ -1908,6 +1907,59 @@ Transform:
   - {fileID: 962441609}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &435643798
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 435643799}
+  - component: {fileID: 435643800}
+  m_Layer: 0
+  m_Name: GameRoom
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &435643799
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 435643798}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &435643800
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 435643798}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 30
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &481770524
 GameObject:
   m_ObjectHideFlags: 0
@@ -2087,7 +2139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LineWidth: 0.02
   m_OverrideInteractorLineLength: 1
-  m_LineLength: 100000
+  m_LineLength: 1e+13
   m_AutoAdjustLineLength: 0
   m_MinLineLength: 0.5
   m_UseDistanceToHitAsMaxLineLength: 1
@@ -3538,6 +3590,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4590fbb3c28e5454186317a9977f70b8, type: 2}
   - {fileID: 11400000, guid: f7399c1afb9e6b74aac18ffaa35d7529, type: 2}
   - {fileID: 11400000, guid: acd8b70d5371f72429518065601db8dc, type: 2}
+  questionAnswerBoard: {fileID: 1538245171}
   questionDisplayText: {fileID: 1531012612}
   questionText: {fileID: 712594095}
   answerObject1: {fileID: 1701068668}
@@ -3548,9 +3601,6 @@ MonoBehaviour:
   functionVideoClipCycle: {fileID: 76314437}
   functionVideoPauze: {fileID: 335463967}
   functionMenuToVideoSwitch: {fileID: 1660744029}
-  interactable:
-    serializedVersion: 2
-    m_Bits: 64
   debug: {fileID: 286966181}
 --- !u!114 &952743515
 MonoBehaviour:
@@ -4748,7 +4798,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LineWidth: 0.02
   m_OverrideInteractorLineLength: 1
-  m_LineLength: 100000
+  m_LineLength: 1e+13
   m_AutoAdjustLineLength: 0
   m_MinLineLength: 0.5
   m_UseDistanceToHitAsMaxLineLength: 1
@@ -8808,8 +8858,10 @@ SceneRoots:
   - {fileID: 1926018955}
   - {fileID: 481770527}
   - {fileID: 1660744030}
+  - {fileID: 435643799}
   - {fileID: 1045574047}
   - {fileID: 372141930}
   - {fileID: 35445954}
   - {fileID: 984290235}
+  - {fileID: 76314436}
   - {fileID: 419184516}

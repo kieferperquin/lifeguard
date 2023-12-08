@@ -15,4 +15,9 @@ public class VideoClipCycle : MonoBehaviour
     {
         Player.Play();
     }
+
+    public void StopClip()
+    {
+        Player.Pause();
+    }
 }

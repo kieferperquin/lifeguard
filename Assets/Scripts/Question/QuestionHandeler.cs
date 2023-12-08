@@ -11,6 +11,8 @@ public class QuestionHandeler : MonoBehaviour
 
     private int currentData = 0;
 
+    [SerializeField] private GameObject questionAnswerBoard;
+
     [SerializeField] private Text questionDisplayText, questionText;
     [SerializeField] private GameObject answerObject1, answerObject2, answerObject3, answerObject4;
     private Text answerText1, answerText2, answerText3, answerText4;
@@ -22,8 +24,6 @@ public class QuestionHandeler : MonoBehaviour
     [SerializeField] private VideoClipCycle functionVideoClipCycle;
     [SerializeField] private VideoPauze functionVideoPauze;
     [SerializeField] private MenuToVideoSwitch functionMenuToVideoSwitch;
-
-    [SerializeField] private LayerMask interactable;
 
     [SerializeField] private Text debug;
     void Start()
@@ -38,6 +38,8 @@ public class QuestionHandeler : MonoBehaviour
 
         // run once so in the start you have a question
         SetNextQuestion();
+
+        functionVideoClipCycle.StopClip();
     }
     public void SetNextQuestion()
     {
@@ -59,7 +61,7 @@ public class QuestionHandeler : MonoBehaviour
         currentData++;
     }
 
-    void SetTextTagAndLayer(string tagToSet, string textToSet)
+    void SetTextAndTags(string tagToSet, string textToSet)
     {
         answerObject1.tag = tagToSet;
         answerObject2.tag = tagToSet;
@@ -70,11 +72,6 @@ public class QuestionHandeler : MonoBehaviour
         answerText2.text = textToSet;
         answerText3.text = textToSet;
         answerText4.text = textToSet;
-
-        answerObject1.layer = interactable;
-        answerObject2.layer = interactable;
-        answerObject3.layer = interactable;
-        answerObject4.layer = interactable;
     }
 
     void SetQuestion(QuestionsSO currentQuestionData)
@@ -116,7 +113,7 @@ public class QuestionHandeler : MonoBehaviour
         {
             correctListAmount.Add(i);
         }
-        SetTextTagAndLayer("Correct", "Correct");
+        SetTextAndTags("Correct", "Correct");
         // sets the 4 correct answers
         SetCorrectAnswer(answerText1, answerObject1, correctAnswerList);
         SetCorrectAnswer(answerText2, answerObject2, correctAnswerList);
@@ -138,7 +135,7 @@ public class QuestionHandeler : MonoBehaviour
             wrongListAmount.Add(i);
         }
 
-        SetTextTagAndLayer("Untagged", "");
+        SetTextAndTags("Untagged", "");
 
         if (correctAnswer == 1) // if the random is 1
         {
@@ -196,10 +193,9 @@ public class QuestionHandeler : MonoBehaviour
 
     void PointAndClick(GameObject pointClickObject)
     {
-        SetTextTagAndLayer("Correct", "Correct");
+        setAnswerObjectsActive(false);
 
-        //setAnswerObjectsActive(false);
-
-        //Instantiate(pointClickObject, new Vector3(0, 0, 0), Quaternion.identity);
+        functionQuestionMenuHandeler.SetPointClickQuestionGameObject(Instantiate(pointClickObject, new Vector3(0, 0, 0), Quaternion.identity));
+        functionQuestionMenuHandeler.SetDisplayVar(false);
     }
 }
