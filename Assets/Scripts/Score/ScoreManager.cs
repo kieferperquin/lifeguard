@@ -30,7 +30,7 @@ public class ScoreManager : MonoBehaviour
             timeInMenu += Time.deltaTime;
         }
 
-        ScoreText.text = "seconds spent in menu's = " + Mathf.Round(timeInMenu * 100f) / 100f;
+        ScoreText.text = "secondes in menu's = " + Mathf.Round(timeInMenu * 100f) / 100f;
         ;
 
         //debug.text = timeInMenu.ToString();

@@ -7,9 +7,13 @@ using UnityEngine.UI;
 
 public class QuestionHandeler : MonoBehaviour
 {
-    [SerializeField] private QuestionsSO[] questionsDataArray;
+    [SerializeField] private QuestionMenuHandeler functionQuestionMenuHandeler;
+    [SerializeField] private VideoClipCycle functionVideoClipCycle;
+    [SerializeField] private VideoPauze functionVideoPauze;
+    [SerializeField] private MenuToVideoSwitch functionMenuToVideoSwitch;
+    [SerializeField] private ProgressBarManager functionProgressBarManager;
 
-    private int currentData = 0;
+    [SerializeField] private QuestionsSO[] questionsDataArray;
 
     [SerializeField] private GameObject questionAnswerBoard;
 
@@ -20,23 +24,18 @@ public class QuestionHandeler : MonoBehaviour
     private List<int> correctListAmount;
     private List<int> wrongListAmount;
 
-    [SerializeField] private QuestionMenuHandeler functionQuestionMenuHandeler;
-    [SerializeField] private VideoClipCycle functionVideoClipCycle;
-    [SerializeField] private VideoPauze functionVideoPauze;
-    [SerializeField] private MenuToVideoSwitch functionMenuToVideoSwitch;
+    private int currentData = 0;
 
     [SerializeField] private Text debug;
     void Start()
     {        
-        // get text objects from buttons
+        //get text objects from buttons
         answerText1 = answerObject1.GetComponentInChildren<Text>();
         answerText2 = answerObject2.GetComponentInChildren<Text>();
         answerText3 = answerObject3.GetComponentInChildren<Text>();
         answerText4 = answerObject4.GetComponentInChildren<Text>();
 
-        //RemoveAllAddLayer(); // removes the text before setting it again (just to make sure it works)
-
-        // run once so in the start you have a question
+        //run once so in the start you have a question
         SetNextQuestion();
 
         functionVideoClipCycle.StopClip();
@@ -52,11 +51,13 @@ public class QuestionHandeler : MonoBehaviour
 
         functionVideoClipCycle.SetClip(questionsDataArray[currentData]);
 
-        functionQuestionMenuHandeler.SetDisplayVar(false); // set display activated to false so when you answer the menu does not stay open
+        functionQuestionMenuHandeler.SetDisplayVar(false); //set display activated to false so when you answer the menu does not stay open
 
-        SetQuestion(questionsDataArray[currentData]); // sets the question text
+        SetQuestion(questionsDataArray[currentData]); //sets the question text
 
-        SetAnswers(questionsDataArray[currentData]); // sets the answers
+        SetAnswers(questionsDataArray[currentData]); //sets the answers
+
+        functionProgressBarManager.SetBarSize(questionsDataArray.Length, currentData); //makes the progress bar refresh
 
         currentData++;
     }
@@ -113,7 +114,7 @@ public class QuestionHandeler : MonoBehaviour
         {
             correctListAmount.Add(i);
         }
-        SetTextAndTags("Correct", "Correct");
+
         // sets the 4 correct answers
         SetCorrectAnswer(answerText1, answerObject1, correctAnswerList);
         SetCorrectAnswer(answerText2, answerObject2, correctAnswerList);
@@ -124,8 +125,10 @@ public class QuestionHandeler : MonoBehaviour
     void OneCorrectAnswer(List<string> wrongAnswerList, List<string> correctAnswerList)
     {
         int correctAnswer = Random.Range(1, 4); // makes a random between 1 and 4
+
         correctListAmount = new List<int>(); // makes 2 lists
         wrongListAmount = new List<int>();
+
         for (int i = 0; i < correctAnswerList.Count; i++) // puts all the indexes from correctAnswerList into the list
         {
             correctListAmount.Add(i);

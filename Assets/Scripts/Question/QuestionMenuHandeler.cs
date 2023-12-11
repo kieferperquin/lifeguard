@@ -59,25 +59,35 @@ public class QuestionMenuHandeler : MonoBehaviour
         // opens the menu so the player can answer the questions
         if (displayActivated)//true
         {
-            questionAnswerBoard.SetActive(true);
-            questionDisplayBoard.SetActive(false);
-
             if (pointClickQuestion != null)
             {
+                //set a question menu for the point click questions true
+                questionAnswerBoard.SetActive(true); //need to remove this one
                 pointClickQuestion.SetActive(true);
             }
+            else
+            {
+                questionAnswerBoard.SetActive(true);
+            }
+
+                questionDisplayBoard.SetActive(false);
 
             function.ChangePausedBool(true);
         }
         else
         {
-            questionAnswerBoard.SetActive(false);
-            questionDisplayBoard.SetActive(true);
-
             if (pointClickQuestion != null)
             {
+                //set a question menu for the point click questions false
+                questionAnswerBoard.SetActive(false); //need to remove this one
                 pointClickQuestion.SetActive(false);
             }
+            else
+            {
+                questionAnswerBoard.SetActive(false);
+            }
+
+                questionDisplayBoard.SetActive(true);
 
             function.ChangePausedBool(false);
         }
