@@ -58,7 +58,8 @@ public class QuestionHandeler : MonoBehaviour
         SetAnswers(questionsDataArray[currentData]); //sets the answers
 
         functionProgressBarManager.SetBarSize(questionsDataArray.Length, currentData); //makes the progress bar refresh
-
+        debug.text = (Mathf.Round((currentData / questionsDataArray.Length)* 100f) / 100f).ToString();
+        
         currentData++;
     }
 

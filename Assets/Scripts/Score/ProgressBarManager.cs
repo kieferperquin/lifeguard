@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 public class ProgressBarManager : MonoBehaviour
 {
+    [SerializeField] private Image fillObject;
     public void SetBarSize(int maxScore, int currentScore)
-    {
-        gameObject.GetComponent<Image>().fillAmount = currentScore / maxScore;
+    {        
+        fillObject.fillAmount = currentScore / maxScore;
     }
 }
