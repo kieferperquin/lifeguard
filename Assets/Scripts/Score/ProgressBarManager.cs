@@ -5,9 +5,10 @@ using UnityEngine.UI;
 
 public class ProgressBarManager : MonoBehaviour
 {
-    [SerializeField] private Image fillObject;
-    public void SetBarSize(float fillVolume)
+    [SerializeField] private Text text;
+    public void SetBarSize(int currentAmount, int maxAmount)
     {
-        fillObject.fillAmount = fillVolume;
+        gameObject.GetComponent<Image>().fillAmount = (currentAmount * 1.0f) / (maxAmount * 1.0f);
+        text.text = $"{currentAmount}/{maxAmount}";
     }
 }

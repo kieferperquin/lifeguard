@@ -52,7 +52,7 @@ public class QuestionHandeler : MonoBehaviour
 
         SetAnswers(questionsDataArray[currentData]); //sets the answers
 
-        functionProgressBarManager.SetBarSize((currentData * 1.0f) / (questionsDataArray.Length * 1.0f));
+        functionProgressBarManager.SetBarSize(currentData, questionsDataArray.Length);
 
         if (currentData >= questionsDataArray.Length)
         {
