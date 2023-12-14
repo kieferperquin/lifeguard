@@ -44,11 +44,6 @@ public class QuestionHandeler : MonoBehaviour
     {
         setAnswerObjectsActive(true);
 
-        if (currentData >= questionsDataArray.Length)
-        {
-            functionMenuToVideoSwitch.Win();
-        }
-
         functionVideoClipCycle.SetClip(questionsDataArray[currentData]);
 
         functionQuestionMenuHandeler.SetDisplayVar(false); //set display activated to false so when you answer the menu does not stay open
@@ -57,9 +52,13 @@ public class QuestionHandeler : MonoBehaviour
 
         SetAnswers(questionsDataArray[currentData]); //sets the answers
 
-        functionProgressBarManager.SetBarSize(questionsDataArray.Length, currentData); //makes the progress bar refresh
-        debug.text = (Mathf.Round((currentData / questionsDataArray.Length)* 100f) / 100f).ToString();
-        
+        functionProgressBarManager.SetBarSize((currentData * 1.0f) / (questionsDataArray.Length * 1.0f));
+
+        if (currentData >= questionsDataArray.Length)
+        {
+            functionMenuToVideoSwitch.Win();
+        }
+
         currentData++;
     }
 
