@@ -40,8 +40,14 @@ public class QuestionHandeler : MonoBehaviour
 
         functionVideoClipCycle.StopClip();
     }
+
     public void SetNextQuestion()
     {
+        if (currentData >= questionsDataArray.Length)
+        {
+            functionMenuToVideoSwitch.Win();
+        }
+
         setAnswerObjectsActive(true);
 
         functionVideoClipCycle.SetClip(questionsDataArray[currentData]);
@@ -53,11 +59,6 @@ public class QuestionHandeler : MonoBehaviour
         SetAnswers(questionsDataArray[currentData]); //sets the answers
 
         functionProgressBarManager.SetBarSize(currentData, questionsDataArray.Length);
-
-        if (currentData >= questionsDataArray.Length)
-        {
-            functionMenuToVideoSwitch.Win();
-        }
 
         currentData++;
     }
