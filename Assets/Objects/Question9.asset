@@ -12,14 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b438708ed8293b409270c88155fb890, type: 3}
   m_Name: Question9
   m_EditorClassIdentifier: 
-  question: slachtoffer is aan de kant welke stappen kunnen de lifeguards nu nemen
+  question: Slachtoffer is aan de kant welke stappen kunnen de lifeguards nu nemen
   allCorrect: 1
   pointClick: 0
   correctAnswerList:
-  - de hulp verleners doen hun controle aademhalings circulatie
-  - bell 112
-  - haal de AED
-  - ontruim zwembad
+  - De hulp verleners doen hun controle ademhalings circulatie
+  - Bel 112
+  - Haal de AED
+  - Ontruim het zwembad
+  - Start met EHBO
   wrongAnswerList: []
-  pointClickObjects: []
+  pointClickObjects: {fileID: 0}
   videoClip: {fileID: 32900000, guid: a6909148e60763749b6f63cee14c32a6, type: 3}
+  wrongAnswerFeedBack: 
+  correctAnswerFeedBack: Wanneer het team samen werkt en taken verdeeld is de kans
+    van slagen het grootst.

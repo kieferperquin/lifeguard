@@ -12,14 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b438708ed8293b409270c88155fb890, type: 3}
   m_Name: Question1
   m_EditorClassIdentifier: 
-  question: Wat is de ideale positie om plaats te nemen in het zwembad?
+  question: Wat is de ideale positie om plaats te nemen bij het zwembad?
   allCorrect: 0
   pointClick: 0
   correctAnswerList:
-  - hoek zembad bij het raam
+  - hoek zwembad bij het raam
   wrongAnswerList:
   - bij je collega
   - in het water
-  - ' fout 3'
-  pointClickObjects: []
+  - hoek zwembad bij nood uitgang
+  pointClickObjects: {fileID: 0}
   videoClip: {fileID: 32900000, guid: c4d12ab2f5dadb6488243d0a87140814, type: 3}
+  wrongAnswerFeedBack: kan je de bodem van de andere kant zien? en is de zone verdeling
+    met de andere lifeguards goed verdeeld?
+  correctAnswerFeedBack: je houdt rekening met het zonlicht en de weerspiegeling
+    op het water. Tevens een goede zoneverdeling met de andere lifeguards

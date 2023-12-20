@@ -12,14 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b438708ed8293b409270c88155fb890, type: 3}
   m_Name: Question6
   m_EditorClassIdentifier: 
-  question: hoe handel je?
+  question: Hoe benader je de drenkeling?
   allCorrect: 0
   pointClick: 0
   correctAnswerList:
-  - Zwemmen boven en hoekduik bij positie drenkeling
+  - Je zwemt tot boven de drenkeling en maakt een hoekduik.
   wrongAnswerList:
-  - fout 1
-  - fout 2
-  - fout 3
-  pointClickObjects: []
+  - Je daalt af met je benen naar de bodem
+  - Je stuurt de omstanders weg voordat je de duik maakt
+  - Je communiceert met de collega's over de plek voor je afdaalt
+  - Je daalt af en kijkt goed rond of er niemand onderwater benadert.
+  pointClickObjects: {fileID: 0}
   videoClip: {fileID: 32900000, guid: c18e96a672466e54abacc66e29c0fd8e, type: 3}
+  wrongAnswerFeedBack: Verlies je zo niet onnodig tijd?
+  correctAnswerFeedBack: Je ben zo op een snelle en veilige manier je drenkeling
+    aan het benaderen.

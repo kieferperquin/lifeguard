@@ -9,6 +9,8 @@ public class MenuToVideoSwitch : MonoBehaviour
     [SerializeField] private GameObject videoSceneStuff;
     [SerializeField] private GameObject questionDisplayBoard;
     [SerializeField] private GameObject questionAnswerBoard;
+    [SerializeField] private GameObject wrongAnswerFeedback;
+    [SerializeField] private GameObject correctAnswerFeedback;
 
     [SerializeField] private GameObject winScreen;
 
@@ -19,6 +21,8 @@ public class MenuToVideoSwitch : MonoBehaviour
         menuSceneStuff.SetActive(true);
         questionDisplayBoard.SetActive(true);
         questionAnswerBoard.SetActive(false);
+        wrongAnswerFeedback.SetActive(false);
+        correctAnswerFeedback.SetActive(false);
         winScreen.SetActive(false);
     }
     public void Switch()

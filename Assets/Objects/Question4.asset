@@ -16,10 +16,14 @@ MonoBehaviour:
   allCorrect: 0
   pointClick: 0
   correctAnswerList:
-  - je comuniceerd met je collega's
+  - je comuniceert met je collega's via portofoon
+  - je comuniceert met je collega's verbaal of non verbaal
   wrongAnswerList:
-  - fout 1
-  - fout 2
-  - fout 3
-  pointClickObjects: []
+  - spring direct in het water
+  - je vraagt omstanders om hulp
+  - je wacht enkele seconden of er een reactie volgt
+  pointClickObjects: {fileID: 0}
   videoClip: {fileID: 32900000, guid: 681ac4b577392324199730f1bb57eb08, type: 3}
+  wrongAnswerFeedBack: maakt werken in een team een reddingsactie daadkrachtiger?
+  correctAnswerFeedBack: goed gesignaleerd, je zorgt er nu voor dat het team in paraatheid
+    wordt gebracht. Iedereen kan gaan handelen.

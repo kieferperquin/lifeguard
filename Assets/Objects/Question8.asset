@@ -12,14 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b438708ed8293b409270c88155fb890, type: 3}
   m_Name: Question8
   m_EditorClassIdentifier: 
-  question: wat is de juiste vervoersgreep?
+  question: wat is de juiste reddingstechniek?
   allCorrect: 0
   pointClick: 0
   correctAnswerList:
-  - pak de polsen met een dubbele polsgreep
+  - Je zwemt met de dubbele polsgreep naar de zwembadrand
+  - Je zwemt met de kopgreep naar de zwembadrand
   wrongAnswerList:
-  - fout 1
-  - fout 2
-  - fout 3
-  pointClickObjects: []
+  - Je zwemt met de zeemansgreep naar de zwembadrand
+  - Je sleept de drenkeling naar de zwembadrand
+  - 'Je houdt watertrappelend de drenkeling bovenwater en vraagt om hulp '
+  pointClickObjects: {fileID: 0}
   videoClip: {fileID: 32900000, guid: 74063fb4234f9ae46850a4ef964dca13, type: 3}
+  wrongAnswerFeedBack: Controleer je zo een bewusteloze drenkeling op de meest veilige
+    en snelle manier naar de zwembadrand?
+  correctAnswerFeedBack: Dit is de juiste vervoersgreep waardoor je de bewusteloze
+    drenkeling veilig bovenwater houdt

@@ -20,3 +20,5 @@ MonoBehaviour:
   pointClickObjects: {fileID: 178108163995264893, guid: 82e3730b754384e438c8c4c248cca180,
     type: 3}
   videoClip: {fileID: 32900000, guid: 41197391c1274eb44ba4ae73b4681441, type: 3}
+  wrongAnswerFeedBack: waarom heb je deze plek aan geclicked?
+  correctAnswerFeedBack: goed gekeken.

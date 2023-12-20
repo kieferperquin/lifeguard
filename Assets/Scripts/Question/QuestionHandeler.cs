@@ -202,4 +202,9 @@ public class QuestionHandeler : MonoBehaviour
         functionQuestionMenuHandeler.SetPointClickQuestionGameObject(Instantiate(pointClickObject, new Vector3(0, 0, 0), Quaternion.identity));
         functionQuestionMenuHandeler.SetDisplayVar(false);
     }
+
+    public QuestionsSO GiveQuestionsData()
+    {
+        return questionsDataArray[currentData];
+    }
 }

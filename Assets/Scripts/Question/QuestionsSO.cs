@@ -20,4 +20,8 @@ public class QuestionsSO : ScriptableObject
     public GameObject pointClickObjects;
 
     public VideoClip videoClip;
+
+    public string wrongAnswerFeedBack;
+
+    public string correctAnswerFeedBack;
 }

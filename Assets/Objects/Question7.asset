@@ -12,14 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b438708ed8293b409270c88155fb890, type: 3}
   m_Name: Question7
   m_EditorClassIdentifier: 
-  question: hoe breng je de drenkeling naar boven?
+  question: Hoe breng je de drenkeling naar boven?
   allCorrect: 0
   pointClick: 0
   correctAnswerList:
-  - Drenkeling vastpakken bij oksel en gezight naar buiten
+  - Pak de drenkeling vast onder de oksel door over de borst met het gezicht van
+    je afgedraaid
   wrongAnswerList:
-  - fout 1
-  - fout 2
-  - fout 3
-  pointClickObjects: []
+  - Pak zo snel mogelijk de drenkeling aan been of arm en zwem omhoog
+  - Pak de drenkeling bij de hand en check op reactie
+  - Pak met beide handen het hoofd stevig vast en zwem gecontroleerd naar boven
+  pointClickObjects: {fileID: 0}
   videoClip: {fileID: 32900000, guid: 6ec5a665b141b2d4c832fa3b3218d833, type: 3}
+  wrongAnswerFeedBack: Kun je zo de drenkeling het best controleren tijdens de opstijging?
+  correctAnswerFeedBack: Op deze manier heb je de meeste controle over de drenkling
+    en kun je gecontroleerd opstijgen.

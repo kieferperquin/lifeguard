@@ -70,7 +70,7 @@ public class QuestionMenuHandeler : MonoBehaviour
                 questionAnswerBoard.SetActive(true);
             }
 
-                questionDisplayBoard.SetActive(false);
+            questionDisplayBoard.SetActive(false);
 
             function.ChangePausedBool(true);
         }
@@ -87,7 +87,7 @@ public class QuestionMenuHandeler : MonoBehaviour
                 questionAnswerBoard.SetActive(false);
             }
 
-                questionDisplayBoard.SetActive(true);
+            questionDisplayBoard.SetActive(true);
 
             function.ChangePausedBool(false);
         }

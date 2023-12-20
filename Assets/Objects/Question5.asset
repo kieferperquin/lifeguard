@@ -16,10 +16,15 @@ MonoBehaviour:
   allCorrect: 0
   pointClick: 0
   correctAnswerList:
-  - natte reding
+  - 'Je voert een natte redding uit '
+  - Je gaat middels een veilige en efficiente manier het water in
   wrongAnswerList:
-  - fout 1
-  - fout 2
-  - fout 3
-  pointClickObjects: []
+  - Je gooit een reddingslijn
+  - Je vraagt of omstanders het drenkeling opduiken
+  - Je ontruimt het zwembad
+  pointClickObjects: {fileID: 0}
   videoClip: {fileID: 32900000, guid: 2eb74983491920e45b03e95533e77dcd, type: 3}
+  wrongAnswerFeedBack: Is dit de meest efficiente en effectieve manier om zo snel
+    mogelijk de drenkeling te bereiken?
+  correctAnswerFeedBack: Op deze manier benader je de drenkeling veilig en snel rekeninghoudende
+    met de omgeving

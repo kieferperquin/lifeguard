@@ -16,10 +16,15 @@ MonoBehaviour:
   allCorrect: 0
   pointClick: 0
   correctAnswerList:
-  - scannen en pas de 10-20 rege toe
+  - scannen en pas de 10-20 regel toe
+  - pas de 10-20 regel toe en blijf scannen
   wrongAnswerList:
-  - fout 1
-  - fout 2
-  - fout 3
-  pointClickObjects: []
+  - blijf het oppervlakte in de gaten houden
+  - 'tel het aantal badgasten '
+  - leg je focus op de materialen in het zwembad
+  pointClickObjects: {fileID: 0}
   videoClip: {fileID: 32900000, guid: ebd5e01f5bd3a654ba0cbf2734ab92da, type: 3}
+  wrongAnswerFeedBack: heb je nu alle lagen van het zwembad geinspecteerd binnen
+    een korte tijd? Kun je vanaf jouw positie jouw gehele zone tijdig bereiken?
+  correctAnswerFeedBack: door te scannen zie je alle lagen van jouw zone en kun je
+    dit binnen 10 seconden zien en binnen 20 seconden bereiken.
