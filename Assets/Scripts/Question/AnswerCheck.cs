@@ -14,7 +14,7 @@ public class AnswerCheck : MonoBehaviour
     [SerializeField] private QuestionHandeler functionQuestionHandeler;
     [SerializeField] private VideoClipCycle functionVideoClipCycle;
     [SerializeField] private ScoreManager functionScoreManager;
-    [SerializeField] private AnswerFeedback functionWrongAnswerHandler;
+    [SerializeField] private WrongFeedbackHandler functionWrongAnswerHandler;
 
     public void CheckAnswer(GameObject button)
     {

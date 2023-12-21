@@ -205,6 +205,6 @@ public class QuestionHandeler : MonoBehaviour
 
     public QuestionsSO GiveQuestionsData()
     {
-        return questionsDataArray[currentData];
+        return questionsDataArray[currentData -1];
     }
 }

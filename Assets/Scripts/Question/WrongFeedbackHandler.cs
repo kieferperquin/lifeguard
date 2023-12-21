@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class AnswerFeedback : MonoBehaviour
+public class WrongFeedbackHandler : MonoBehaviour
 {
     [SerializeField] private QuestionHandeler function;
     [SerializeField] private Text whyCorrectAnswerText;
