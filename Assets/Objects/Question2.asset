@@ -12,19 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b438708ed8293b409270c88155fb890, type: 3}
   m_Name: Question2
   m_EditorClassIdentifier: 
-  question: wat is de juiste manier van toezicht houden?
+  question: Wat is de juiste manier van toezicht houden?
   allCorrect: 0
   pointClick: 0
   correctAnswerList:
-  - scannen en pas de 10-20 regel toe
-  - pas de 10-20 regel toe en blijf scannen
+  - Scannen en pas de 10-20 regel toe
+  - Pas de 10-20 regel toe en blijf scannen
   wrongAnswerList:
-  - blijf het oppervlakte in de gaten houden
-  - 'tel het aantal badgasten '
-  - leg je focus op de materialen in het zwembad
+  - Blijf het oppervlakte in de gaten houden
+  - 'Tel het aantal badgasten '
+  - Leg je focus op de materialen in het zwembad
   pointClickObjects: {fileID: 0}
   videoClip: {fileID: 32900000, guid: ebd5e01f5bd3a654ba0cbf2734ab92da, type: 3}
-  wrongAnswerFeedBack: heb je nu alle lagen van het zwembad geinspecteerd binnen
+  wrongAnswerFeedBack: Heb je nu alle lagen van het zwembad geinspecteerd binnen
     een korte tijd? Kun je vanaf jouw positie jouw gehele zone tijdig bereiken?
-  correctAnswerFeedBack: door te scannen zie je alle lagen van jouw zone en kun je
+  correctAnswerFeedBack: Door te scannen zie je alle lagen van jouw zone en kun je
     dit binnen 10 seconden zien en binnen 20 seconden bereiken.

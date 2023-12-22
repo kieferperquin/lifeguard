@@ -16,14 +16,14 @@ MonoBehaviour:
   allCorrect: 0
   pointClick: 0
   correctAnswerList:
-  - hoek zwembad bij het raam
+  - Hoek zwembad bij het raam
   wrongAnswerList:
-  - bij je collega
-  - in het water
-  - hoek zwembad bij nood uitgang
+  - Bij je collega
+  - In het water
+  - Hoek zwembad bij nood uitgang
   pointClickObjects: {fileID: 0}
   videoClip: {fileID: 32900000, guid: c4d12ab2f5dadb6488243d0a87140814, type: 3}
-  wrongAnswerFeedBack: kan je de bodem van de andere kant zien? en is de zone verdeling
+  wrongAnswerFeedBack: Kan je de bodem van de andere kant zien? En is de zone verdeling
     met de andere lifeguards goed verdeeld?
-  correctAnswerFeedBack: je houdt rekening met het zonlicht en de weerspiegeling
+  correctAnswerFeedBack: Je houdt rekening met het zonlicht en de weerspiegeling
     op het water. Tevens een goede zoneverdeling met de andere lifeguards

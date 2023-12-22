@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b438708ed8293b409270c88155fb890, type: 3}
   m_Name: Question9
   m_EditorClassIdentifier: 
-  question: Slachtoffer is aan de kant welke stappen kunnen de lifeguards nu nemen
+  question: De drenkeling is aan de kant welke stappen kunnen de lifeguards nu nemen
   allCorrect: 1
   pointClick: 0
   correctAnswerList:

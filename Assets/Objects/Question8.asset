@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b438708ed8293b409270c88155fb890, type: 3}
   m_Name: Question8
   m_EditorClassIdentifier: 
-  question: wat is de juiste reddingstechniek?
+  question: Wat is de juiste reddingstechniek?
   allCorrect: 0
   pointClick: 0
   correctAnswerList:

@@ -12,18 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b438708ed8293b409270c88155fb890, type: 3}
   m_Name: Question4
   m_EditorClassIdentifier: 
-  question: je gaat over naar handelen wat zijn je stappen?
+  question: Je gaat over naar handelen wat zijn je stappen?
   allCorrect: 0
   pointClick: 0
   correctAnswerList:
-  - je comuniceert met je collega's via portofoon
-  - je comuniceert met je collega's verbaal of non verbaal
+  - Je comuniceert met je collega's via portofoon
+  - Je comuniceert met je collega's verbaal of non verbaal
   wrongAnswerList:
-  - spring direct in het water
-  - je vraagt omstanders om hulp
-  - je wacht enkele seconden of er een reactie volgt
+  - Spring direct in het water
+  - Je vraagt omstanders om hulp
+  - Je wacht enkele seconden of er een reactie volgt
   pointClickObjects: {fileID: 0}
   videoClip: {fileID: 32900000, guid: 681ac4b577392324199730f1bb57eb08, type: 3}
-  wrongAnswerFeedBack: maakt werken in een team een reddingsactie daadkrachtiger?
-  correctAnswerFeedBack: goed gesignaleerd, je zorgt er nu voor dat het team in paraatheid
+  wrongAnswerFeedBack: Maakt werken in een team een reddingsactie daadkrachtiger?
+  correctAnswerFeedBack: Goed gesignaleerd, je zorgt er nu voor dat het team in paraatheid
     wordt gebracht. Iedereen kan gaan handelen.

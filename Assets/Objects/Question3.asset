@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b438708ed8293b409270c88155fb890, type: 3}
   m_Name: Question3
   m_EditorClassIdentifier: 
-  question: er is een ongeluk gebeurd wijs waar aan waar het is gebeurd.
+  question: Er is een ongeluk gebeurd wijs waar aan waar het is gebeurd.
   allCorrect: 0
   pointClick: 1
   correctAnswerList: []
@@ -20,5 +20,5 @@ MonoBehaviour:
   pointClickObjects: {fileID: 178108163995264893, guid: 82e3730b754384e438c8c4c248cca180,
     type: 3}
   videoClip: {fileID: 32900000, guid: 41197391c1274eb44ba4ae73b4681441, type: 3}
-  wrongAnswerFeedBack: waarom heb je deze plek aan geclicked?
-  correctAnswerFeedBack: goed gekeken.
+  wrongAnswerFeedBack: Waarom heb je deze plek aan geclicked?
+  correctAnswerFeedBack: Goed gekeken.
