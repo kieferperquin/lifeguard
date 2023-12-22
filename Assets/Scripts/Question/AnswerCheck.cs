@@ -15,6 +15,7 @@ public class AnswerCheck : MonoBehaviour
     [SerializeField] private VideoClipCycle functionVideoClipCycle;
     [SerializeField] private ScoreManager functionScoreManager;
     [SerializeField] private WrongFeedbackHandler functionWrongAnswerHandler;
+    [SerializeField] private CorrectFeedbackHandler functionCorrectAnswerHandler;
 
     public void CheckAnswer(GameObject button)
     {
@@ -22,6 +23,7 @@ public class AnswerCheck : MonoBehaviour
         {
             functionScoreManager.ChangeIsAnswering(false);
             CorrectAnswerFeedback.SetActive(true);
+            functionCorrectAnswerHandler.SetCorrectAnswerFeedback();
         }
         else if (button.CompareTag("Wrong")) // if wrong button is clicked start again for now but there should pop up a menu that will explain why it is wrong
         {
