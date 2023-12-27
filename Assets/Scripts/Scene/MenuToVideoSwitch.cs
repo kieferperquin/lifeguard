@@ -6,7 +6,8 @@ public class MenuToVideoSwitch : MonoBehaviour
 {
     [SerializeField] private GameObject menuSceneStuff;
 
-    [SerializeField] private GameObject videoSceneStuff;
+    [SerializeField] private GameObject QuestionCanvas;
+    [SerializeField] private GameObject GamificationCanvas;
     [SerializeField] private GameObject questionDisplayBoard;
     [SerializeField] private GameObject questionAnswerBoard;
     [SerializeField] private GameObject wrongAnswerFeedback;
@@ -17,9 +18,12 @@ public class MenuToVideoSwitch : MonoBehaviour
     [SerializeField] private ScoreManager score;
     private void Start()
     {
-        videoSceneStuff.SetActive(false);
         menuSceneStuff.SetActive(true);
         questionDisplayBoard.SetActive(true);
+
+        QuestionCanvas.SetActive(false);
+        GamificationCanvas.SetActive(false);
+
         questionAnswerBoard.SetActive(false);
         wrongAnswerFeedback.SetActive(false);
         correctAnswerFeedback.SetActive(false);
@@ -27,14 +31,18 @@ public class MenuToVideoSwitch : MonoBehaviour
     }
     public void Switch()
     {
-        videoSceneStuff.SetActive(true);
+        QuestionCanvas.SetActive(true);
+        GamificationCanvas.SetActive(true);
+
         menuSceneStuff.SetActive(false);
     }
 
     public void Win()
     {
-        score.PausedVideo(false);
         winScreen.SetActive(true);
-        videoSceneStuff.SetActive(false);
+
+        score.PausedVideo(false);
+        QuestionCanvas.SetActive(false);
+        GamificationCanvas.SetActive(false);
     }
 }

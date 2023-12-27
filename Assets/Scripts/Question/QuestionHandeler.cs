@@ -12,6 +12,7 @@ public class QuestionHandeler : MonoBehaviour
     [SerializeField] private VideoPauze functionVideoPauze;
     [SerializeField] private MenuToVideoSwitch functionMenuToVideoSwitch;
     [SerializeField] private ProgressBarManager functionProgressBarManager;
+    [SerializeField] private ScoreManager functionScoreManager;
 
     [SerializeField] private QuestionsSO[] questionsDataArray;
 
@@ -46,6 +47,7 @@ public class QuestionHandeler : MonoBehaviour
         if (currentData >= questionsDataArray.Length)
         {
             functionMenuToVideoSwitch.Win();
+            functionScoreManager.SetEndingText();
         }
 
         setAnswerObjectsActive(true);
