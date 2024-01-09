@@ -16,9 +16,9 @@ public class QuestionHandeler : MonoBehaviour
 
     [SerializeField] private QuestionsSO[] questionsDataArray;
 
-    [SerializeField] private GameObject questionAnswerBoard;
+    [SerializeField] private GameObject questionAnswerBoard, questionObject, pointClickQuestionObject;
 
-    [SerializeField] private Text questionDisplayText, questionText;
+    [SerializeField] private Text questionDisplayText, pointClickQuestionText, questionText;
     [SerializeField] private GameObject answerObject1, answerObject2, answerObject3, answerObject4;
     private Text answerText1, answerText2, answerText3, answerText4;
 
@@ -83,6 +83,7 @@ public class QuestionHandeler : MonoBehaviour
         // sets the question text
         questionDisplayText.text = currentQuestionData.question;
         questionText.text = currentQuestionData.question;
+        pointClickQuestionText.text = currentQuestionData.question;
     }
 
     void SetAnswers(QuestionsSO currentQuestionData)
@@ -102,11 +103,14 @@ public class QuestionHandeler : MonoBehaviour
     }
 
     void setAnswerObjectsActive(bool active)
-    {
+    {/*
         answerObject1.SetActive(active);
         answerObject2.SetActive(active);
         answerObject3.SetActive(active);
         answerObject4.SetActive(active);
+        */
+        questionObject.SetActive(active);
+        pointClickQuestionObject.SetActive(!active);
     }
 
     void AllCorrectAsnwers(List<string> correctAnswerList)
