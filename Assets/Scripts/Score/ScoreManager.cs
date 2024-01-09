@@ -20,7 +20,7 @@ public class ScoreManager : MonoBehaviour
     {
         totalTime += Time.deltaTime;
 
-        totalTimeText.text = Mathf.RoundToInt(totalTime * 100f).ToString();
+        totalTimeText.text = Mathf.RoundToInt(totalTime).ToString() + " seconds";
 
         if (isAnswering)
         {
@@ -58,5 +58,10 @@ public class ScoreManager : MonoBehaviour
             $"Secondes in menu's = {timeInMenuInSec}" +
             $"Dat is {timeInMenuInMin} minuten en {timeInMenuInSec - (timeInMenuInMin * 60)} seconden" +
             $"Intotaal is dat {totalTimeInSec}";
+    }
+
+    public void SetTotalTimerToZero()
+    {
+        totalTime = 0f;
     }
 }
