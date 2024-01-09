@@ -659,7 +659,7 @@ GameObject:
   - component: {fileID: 82784326}
   - component: {fileID: 82784325}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: TotalTimeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7337,8 +7337,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuSceneStuff: {fileID: 372141929}
-  QuestionCanvas: {fileID: 0}
-  GamificationCanvas: {fileID: 0}
+  QuestionCanvas: {fileID: 1568703373}
+  GamificationCanvas: {fileID: 857435511}
   questionDisplayBoard: {fileID: 689158373}
   questionAnswerBoard: {fileID: 1538245171}
   wrongAnswerFeedback: {fileID: 639579155}
@@ -7374,7 +7374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScoreText: {fileID: 183017402}
-  totalTimeText: {fileID: 0}
+  totalTimeText: {fileID: 82784325}
   debug: {fileID: 286966181}
 --- !u!1 &1683243251
 GameObject:
