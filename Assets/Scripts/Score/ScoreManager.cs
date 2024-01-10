@@ -50,13 +50,14 @@ public class ScoreManager : MonoBehaviour
 
     public void SetEndingText()
     {
-        int timeInMenuInSec = Mathf.RoundToInt(timeInMenu * 100f);
+        int timeInMenuInSec = Mathf.RoundToInt(timeInMenu);
         int timeInMenuInMin = Mathf.RoundToInt(timeInMenuInSec / 60);
+        int totalTimeInSec = Mathf.RoundToInt(totalTime);
 
         ScoreText.text = 
-            $"Secondes in menu's = {timeInMenuInSec}" +
-            $"Dat is {timeInMenuInMin} minuten en {timeInMenuInSec - (timeInMenuInMin * 60)} seconden" +
-            $"Intotaal is dat {totalTime} seconden";
+            $"Secondes in menu's = {timeInMenuInSec} " + "\n" +
+            $"Dat is {timeInMenuInMin} minuten en {timeInMenuInSec - (timeInMenuInMin * 60)} seconden" + "\n" +
+            $"Intotaal is dat {totalTimeInSec} seconden";
     }
 
     public void SetTotalTimerToZero()
