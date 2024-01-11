@@ -20,7 +20,10 @@ public class ScoreManager : MonoBehaviour
     {
         totalTime += Time.deltaTime;
 
-        totalTimeText.text = Mathf.RoundToInt(totalTime).ToString() + " seconds";
+        //veranderen is digitaale clock als in 00:00 (min sec)
+        int totalTimeInSeconds = Mathf.RoundToInt(totalTime);
+        int totalTimeInMinutes = Mathf.RoundToInt(totalTimeInSeconds / 60);
+        totalTimeText.text = $"{totalTimeInMinutes}:{totalTimeInSeconds - (totalTimeInMinutes * 60)}";
 
         if (isAnswering)
         {
