@@ -1,15 +1,14 @@
-oke je gebruikt de handleiding zodat je de game kan spelen / het op de oculus quest 2 zetten.
+oké je gebruikt de handleiding zodat je de game kan spelen / het op de oculus quest 2 zetten.
 
 als het niet werkt dan moet je eerst developer mode aanzetten.
-als je de game al op de quest hebt kan je stap 1 tot en met stap ??? overslaan.
+als je de game al op de quest hebt kun je stap 1 tot en met stap 5 overslaan.
 
 stap 1: je zorgt dat je de laatste APK van de lifeguard game op je laptop hebt
-stap 2: je installerd / opent sidequest
-stap 3: je verbint de quest met je laptop
+stap 2: je installeert / opent sidequest
+stap 3: je verbind de quest met je laptop
 stap 4: je laat je laptop toegang krijgen tot je quest data door op akkoord te clicken.
 stap 5: zet de APK op de quest
 stap 6: zet de quest op en open apps
 stap 7: click op de zoek bar en dan click op onbekende bronnen
-stap 8: zoek voor een app genaamt "LifeGuard" en click
-
-je hebt het nu de game op de quest gezet en het op gestart.
+stap 8: zoek voor een app genaamd "LifeGuard"
+stap 9: click op de app en dan heb je de game gestart
