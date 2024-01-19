@@ -19,8 +19,8 @@ public class QuestionHandeler : MonoBehaviour
     [SerializeField] private GameObject questionAnswerBoard, questionObject, pointClickQuestionObject;
 
     [SerializeField] private Text questionDisplayText, pointClickQuestionText, questionText;
-    [SerializeField] private GameObject answerObject1, answerObject2, answerObject3, answerObject4;
-    private Text answerText1, answerText2, answerText3, answerText4;
+
+    [SerializeField] private List<GameObject> answerObjects = new List<GameObject>();
 
     private List<int> correctListAmount;
     private List<int> wrongListAmount;
@@ -29,13 +29,7 @@ public class QuestionHandeler : MonoBehaviour
 
     [SerializeField] private Text debug;
     void Start()
-    {        
-        //get text objects from buttons
-        answerText1 = answerObject1.GetComponentInChildren<Text>();
-        answerText2 = answerObject2.GetComponentInChildren<Text>();
-        answerText3 = answerObject3.GetComponentInChildren<Text>();
-        answerText4 = answerObject4.GetComponentInChildren<Text>();
-
+    {
         //run once so in the start you have a question
         SetNextQuestion();
 
@@ -67,15 +61,15 @@ public class QuestionHandeler : MonoBehaviour
 
     void SetTextAndTags(string tagToSet, string textToSet)
     {
-        answerObject1.tag = tagToSet;
-        answerObject2.tag = tagToSet;
-        answerObject3.tag = tagToSet;
-        answerObject4.tag = tagToSet;
+        for (int i = 0; i < answerObjects.Count; i++)
+        {
+            answerObjects[i].tag = tagToSet;
+        }
 
-        answerText1.text = textToSet;
-        answerText2.text = textToSet;
-        answerText3.text = textToSet;
-        answerText4.text = textToSet;
+        for (int i = 0; i < answerObjects.Count; i++)
+        {
+            answerObjects[i].GetComponentInChildren<Text>().text = textToSet;
+        }
     }
 
     void SetQuestion(QuestionsSO currentQuestionData)
@@ -103,12 +97,7 @@ public class QuestionHandeler : MonoBehaviour
     }
 
     void setAnswerObjectsActive(bool active)
-    {/*
-        answerObject1.SetActive(active);
-        answerObject2.SetActive(active);
-        answerObject3.SetActive(active);
-        answerObject4.SetActive(active);
-        */
+    {
         questionObject.SetActive(active);
         pointClickQuestionObject.SetActive(!active);
     }
@@ -122,16 +111,17 @@ public class QuestionHandeler : MonoBehaviour
             correctListAmount.Add(i);
         }
 
-        // sets the 4 correct answers
-        SetCorrectAnswer(answerText1, answerObject1, correctAnswerList);
-        SetCorrectAnswer(answerText2, answerObject2, correctAnswerList);
-        SetCorrectAnswer(answerText3, answerObject3, correctAnswerList);
-        SetCorrectAnswer(answerText4, answerObject4, correctAnswerList);
+        for (int i = 0; i < answerObjects.Count; i++)
+        {
+            SetCorrectAnswer(answerObjects[i], correctAnswerList);
+        }
     }
 
     void OneCorrectAnswer(List<string> wrongAnswerList, List<string> correctAnswerList)
     {
-        int correctAnswer = Random.Range(1, 4); // makes a random between 1 and 4
+        List<int> answers = new List<int>() { 0, 1, 2, 3};
+
+        int correctAnswer = Random.Range(1, answers.Count); // makes a random between 1 and 4
 
         correctListAmount = new List<int>(); // makes 2 lists
         wrongListAmount = new List<int>();
@@ -140,63 +130,35 @@ public class QuestionHandeler : MonoBehaviour
         {
             correctListAmount.Add(i);
         }
+
         for (int i = 0; i < wrongAnswerList.Count; i++) // puts all the indexes from wrongAnswerList into the list
         {
             wrongListAmount.Add(i);
         }
-
         SetTextAndTags("Untagged", "");
 
-        if (correctAnswer == 1) // if the random is 1
-        {
-            SetCorrectAnswer(answerText1, answerObject1, correctAnswerList); // sets the correct answer
+        SetCorrectAnswer(answerObjects[correctAnswer], correctAnswerList); // sets the correct answer
+        answers.Remove(correctAnswer);
 
-            // sets 3 wrong answers
-            SetWrongAnswer(answerText2, answerObject2, wrongAnswerList);
-            SetWrongAnswer(answerText3, answerObject3, wrongAnswerList);
-            SetWrongAnswer(answerText4, answerObject4, wrongAnswerList);
-        }
-        else if (correctAnswer == 2) // if the random is 2
+        while(answers.Count > 0)
         {
-            SetCorrectAnswer(answerText2, answerObject2, correctAnswerList);// sets the correct answer
-
-            // sets 3 wrong answers
-            SetWrongAnswer(answerText1, answerObject1, wrongAnswerList);
-            SetWrongAnswer(answerText3, answerObject3, wrongAnswerList);
-            SetWrongAnswer(answerText4, answerObject4, wrongAnswerList);
-        }
-        else if (correctAnswer == 3) // if the random is 3
-        {
-            SetCorrectAnswer(answerText3, answerObject3, correctAnswerList);// sets the correct answer
-
-            // sets 3 wrong answers
-            SetWrongAnswer(answerText1, answerObject1, wrongAnswerList);
-            SetWrongAnswer(answerText2, answerObject2, wrongAnswerList);
-            SetWrongAnswer(answerText4, answerObject4, wrongAnswerList);
-        }
-        else if (correctAnswer == 4) // if the random is 4
-        {
-            SetCorrectAnswer(answerText4, answerObject4, correctAnswerList);// sets the correct answer
-
-            // sets 3 wrong answers
-            SetWrongAnswer(answerText1, answerObject1, wrongAnswerList);
-            SetWrongAnswer(answerText2, answerObject2, wrongAnswerList);
-            SetWrongAnswer(answerText3, answerObject3, wrongAnswerList);
+            SetWrongAnswer(answerObjects[answers[0]], wrongAnswerList);
+            answers.Remove(answers[0]);
         }
     }
 
-    void SetCorrectAnswer(Text answerText, GameObject answerObject, List<string> correctAnswerList)
+    void SetCorrectAnswer(GameObject answerObject, List<string> correctAnswerList)
     {
         int randomCorrectAnswer = Random.Range(0, correctListAmount.Count); // makes a random
-        answerText.text = correctAnswerList[correctListAmount[randomCorrectAnswer]]; // answertext.text = all correct answer[all of the indexes [ random answer]]
+        answerObject.GetComponentInChildren<Text>().text = correctAnswerList[correctListAmount[randomCorrectAnswer]]; // answertext.text = all correct answer[all of the indexes [ random answer]]
         correctListAmount.RemoveAt(randomCorrectAnswer); // removes the index that i used to set the answer so i dont use it again
         answerObject.tag = "Correct"; // set the tag of the object
     }
 
-    void SetWrongAnswer(Text answerText, GameObject answerObject, List<string> wrongAnswerList)
+    void SetWrongAnswer(GameObject answerObject, List<string> wrongAnswerList)
     {
         int randomWrongAnswer = Random.Range(0, wrongListAmount.Count); // makes a random
-        answerText.text = wrongAnswerList[wrongListAmount[randomWrongAnswer]]; // answertext.text = all wrong answer[all of the indexes [ random answer]]
+        answerObject.GetComponentInChildren<Text>().text = wrongAnswerList[wrongListAmount[randomWrongAnswer]]; // answertext.text = all wrong answer[all of the indexes [ random answer]]
         wrongListAmount.RemoveAt(randomWrongAnswer); // removes the index that i used to set the answer so i dont use it again
         answerObject.tag = "Wrong"; // set the tag of the object
     }
