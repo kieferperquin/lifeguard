@@ -23,7 +23,14 @@ public class ScoreManager : MonoBehaviour
         //veranderen is digitaale clock als in 00:00 (min sec)
         int totalTimeInSeconds = Mathf.RoundToInt(totalTime);
         int totalTimeInMinutes = Mathf.RoundToInt(totalTimeInSeconds / 60);
-        totalTimeText.text = $"{totalTimeInMinutes}:{totalTimeInSeconds - (totalTimeInMinutes * 60)}";
+        if (totalTimeInMinutes <= 9)
+        {
+            totalTimeText.text = $"0{totalTimeInMinutes}:{totalTimeInSeconds - (totalTimeInMinutes * 60)}";
+        }
+        else
+        {
+            totalTimeText.text = $"{totalTimeInMinutes}:{totalTimeInSeconds - (totalTimeInMinutes * 60)}";
+        }
 
         if (isAnswering)
         {
@@ -56,11 +63,13 @@ public class ScoreManager : MonoBehaviour
         int timeInMenuInSec = Mathf.RoundToInt(timeInMenu);
         int timeInMenuInMin = Mathf.RoundToInt(timeInMenuInSec / 60);
         int totalTimeInSec = Mathf.RoundToInt(totalTime);
+        int totalTimeInMin = Mathf.RoundToInt(totalTimeInSec / 60);
 
         ScoreText.text = 
             $"Secondes in menu's = {timeInMenuInSec} " + "\n" +
             $"Dat is {timeInMenuInMin} minuten en {timeInMenuInSec - (timeInMenuInMin * 60)} seconden" + "\n" +
-            $"Intotaal is dat {totalTimeInSec} seconden";
+            $"Intotaal is dat {totalTimeInSec} seconden" + "\n" +
+            $"Dat is intotaal {totalTimeInMin} minuten en {totalTimeInSec - (totalTimeInMin * 60)} seconden";
     }
 
     public void SetTotalTimerToZero()
