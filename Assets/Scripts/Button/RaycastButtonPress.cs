@@ -39,11 +39,9 @@ public class RaycastButtonPress : MonoBehaviour
     {
         buttonTrigger = buttons.ToString();
         RaycastHit res;
+
         if (RayInteractor.TryGetCurrent3DRaycastHit(out res))
         {
-            //debug.text = "tag = " + res.collider.tag + "      layer = " + res.transform.gameObject.layer; 
-            //debug.text = $"world pos = {Mathf.Round(res.point.x * 100f) / 100f}, {Mathf.Round(res.point.y * 100f) / 100f}, {Mathf.Round(res.point.z * 100f) / 100f}";
-
             if (res.transform.gameObject.layer == interactableUILayer)
             {
                 bool trigger = Input.GetAxis(buttonTrigger) >= sens;

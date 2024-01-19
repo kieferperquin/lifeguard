@@ -7,21 +7,22 @@ public class SetOnClick : MonoBehaviour
 {
     [SerializeField] private GameObject question;
 
-    private DestroyGameObject function;
-    private AnswerCheck check;
+    private DestroyGameObject destroy;
+    private AnswerCheck answerCheck;
 
     private Button button;
     void Start()
     {
         button = gameObject.GetComponent<Button>();
         
-        check = GameObject.Find("QuestionHandeler").GetComponent<AnswerCheck>();
-        function = question.GetComponent<DestroyGameObject>();
+        answerCheck = GameObject.Find("QuestionHandeler").GetComponent<AnswerCheck>();
+
+        destroy = question.GetComponent<DestroyGameObject>();
     }
 
     public void OnClickEvent()
     {
-        check.CheckAnswer(button.gameObject);
-        function.GameObjectDestroyer(question);
+        answerCheck.CheckAnswer(button.gameObject);
+        destroy.GameObjectDestroyer(question);
     }
 }

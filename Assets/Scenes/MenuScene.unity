@@ -4409,6 +4409,11 @@ MonoBehaviour:
   questionDisplayText: {fileID: 1531012612}
   pointClickQuestionText: {fileID: 817745136}
   questionText: {fileID: 712594095}
+  answerObjects:
+  - {fileID: 1701068668}
+  - {fileID: 1683243251}
+  - {fileID: 1030262281}
+  - {fileID: 151571293}
   answerObject1: {fileID: 1701068668}
   answerObject2: {fileID: 1683243251}
   answerObject3: {fileID: 1030262281}
@@ -4426,7 +4431,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d2772d563bb65d43b287fd0866903f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debug: {fileID: 286966181}
   wrongAnswerFeedback: {fileID: 639579155}
   CorrectAnswerFeedback: {fileID: 1955480762}
   functionQuestionHandeler: {fileID: 952743514}
@@ -4434,6 +4438,7 @@ MonoBehaviour:
   functionScoreManager: {fileID: 1660744031}
   functionWrongAnswerHandler: {fileID: 639579157}
   functionCorrectAnswerHandler: {fileID: 1955480764}
+  debug: {fileID: 286966181}
 --- !u!114 &952743516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7580,13 +7585,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuSceneStuff: {fileID: 372141929}
+  winScreen: {fileID: 984290234}
   QuestionCanvas: {fileID: 1568703373}
   GamificationCanvas: {fileID: 857435511}
   questionDisplayBoard: {fileID: 689158373}
   questionAnswerBoard: {fileID: 1538245171}
   wrongAnswerFeedback: {fileID: 639579155}
   correctAnswerFeedback: {fileID: 1955480762}
-  winScreen: {fileID: 984290234}
   score: {fileID: 1660744031}
 --- !u!4 &1660744030
 Transform:

@@ -27,6 +27,7 @@ public class VideoPauze : MonoBehaviour
         buttonTriggerL = buttonLeft.ToString();
         buttonTriggerR = buttonRight.ToString();
     }
+
     private void Update()
     {
         ButtonPressed();

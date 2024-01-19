@@ -7,16 +7,17 @@ using UnityEngine.Video;
 
 public class AnswerCheck : MonoBehaviour
 {
-    [SerializeField] private Text debug;
     [SerializeField] private GameObject wrongAnswerFeedback;
     [SerializeField] private GameObject CorrectAnswerFeedback;
 
     [SerializeField] private QuestionHandeler functionQuestionHandeler;
     [SerializeField] private VideoClipCycle functionVideoClipCycle;
     [SerializeField] private ScoreManager functionScoreManager;
+
     [SerializeField] private WrongFeedbackHandler functionWrongAnswerHandler;
     [SerializeField] private CorrectFeedbackHandler functionCorrectAnswerHandler;
 
+    [SerializeField] private Text debug;
     public void CheckAnswer(GameObject button)
     {
         if (button.CompareTag("Correct"))
