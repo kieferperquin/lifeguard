@@ -1511,7 +1511,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Hoofdmenu
+  m_Text: Ga terug naar start
 --- !u!222 &233444863
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1859,7 +1859,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &372141930
 Transform:
   m_ObjectHideFlags: 0
