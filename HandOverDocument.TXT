@@ -5,10 +5,11 @@ fijn dat je aan dit project werkt :)
 voor meer informatie over de game kan je me altijd berijken via mijn email (kieferperquin@gmail.com).
 
 de paar dingen wat ik zie wat je zou kunnen doen zijn 
-1. leaderboard (je zou geert moeten vragen wat voor soort online/offline)
-2. QuestionHandeler verbeteren (keuze tussen 2 - 4 - 4+ antwoorden (maby door een int in de QuestionsSO))
-3. hand tracking (als het kan)
-4. meer goede en foute antwoorden in de scriptable objects
+1. voeg een time limit toe voor het antwoorden van vragen
+2. leaderboard (je zou geert moeten vragen wat voor soort online/offline)
+3. QuestionHandeler verbeteren (keuze tussen 2 - 4 - 4+ antwoorden (maby door een int in de QuestionsSO))
+4. hand tracking (als het kan)
+5. meer goede en foute antwoorden in de scriptable objects
 
 en dingen wat geert/iemand anders in de game zou willen.
 
