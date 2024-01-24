@@ -1,1 +1,15 @@
+oké je gebruikt deze handleiding zodat je APK kan downloaden zodat je het op je quest kan zetten
 
+als je unity hub hebt geinstalled dan hoef je stap 1 niet te doen
+
+stap 1: je instaleerd unity hub
+stap 2 je opent unity hub
+stap 3 je download de github project als een zip
+stap 4 unzip de zip
+stap 5 vraag aan Daan voor de video's
+stap 6 ga naar de map "videos" in "main-lifeguard/Assets/Videos" en zet de video's in de map
+stap 7 open het project via unity hub
+stap 8 ga naar "build settings" in "file" links boven
+stap 9 in de build settings menu zorg ervoor dat platform op android staat
+stap 10 click op de "clean build" knop en dan volg stap 11 of click op de "build en run" knop
+stap 11 volg de "" document nu om het op de quest te zetten 
