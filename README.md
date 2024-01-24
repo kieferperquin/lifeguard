@@ -5,7 +5,7 @@ Dit project richt zich op het ontwikkelen van een realistische, realtime weergav
 
 het project is gemaaakt in unity.
 
-om de game te installeren volg de GameInstallHandleiding.txt stappen.
+om de game te installeren volg de GameInstallHandleiding.txt stappen. <br/>
 om de APK te installeren volg de APKInstalHandleiding.txt stappen.
 
 alles in dit project is eigendom van PIT.
